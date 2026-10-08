@@ -1,0 +1,854 @@
+[
+  {
+    "id": "Q01",
+    "question": "Which mitigations address the ATT&CK technique Steganography (T1001.002) used by Axiom (G0001)?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Axiom",
+        "attack_id": "G0001"
+      },
+      "technique": {
+        "name": "Steganography",
+        "attack_id": "T1001.002"
+      },
+      "mitigations": [
+        {
+          "name": "Network Intrusion Prevention",
+          "attack_id": "M1031"
+        }
+      ]
+    },
+    "required_hops": 2,
+    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q02",
+    "question": "Which mitigations address the ATT&CK technique OS Credential Dumping (T1003) used by Axiom (G0001)?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Axiom",
+        "attack_id": "G0001"
+      },
+      "technique": {
+        "name": "OS Credential Dumping",
+        "attack_id": "T1003"
+      },
+      "mitigations": [
+        {
+          "name": "Active Directory Configuration",
+          "attack_id": "M1015"
+        },
+        {
+          "name": "User Training",
+          "attack_id": "M1017"
+        },
+        {
+          "name": "Privileged Process Integrity",
+          "attack_id": "M1025"
+        },
+        {
+          "name": "Privileged Account Management",
+          "attack_id": "M1026"
+        },
+        {
+          "name": "Password Policies",
+          "attack_id": "M1027"
+        },
+        {
+          "name": "Operating System Configuration",
+          "attack_id": "M1028"
+        },
+        {
+          "name": "Behavior Prevention on Endpoint",
+          "attack_id": "M1040"
+        },
+        {
+          "name": "Encrypt Sensitive Information",
+          "attack_id": "M1041"
+        },
+        {
+          "name": "Credential Access Protection",
+          "attack_id": "M1043"
+        }
+      ]
+    },
+    "required_hops": 2,
+    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q03",
+    "question": "Which mitigations address the ATT&CK technique Data from Local System (T1005) used by Axiom (G0001)?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Axiom",
+        "attack_id": "G0001"
+      },
+      "technique": {
+        "name": "Data from Local System",
+        "attack_id": "T1005"
+      },
+      "mitigations": [
+        {
+          "name": "Data Loss Prevention",
+          "attack_id": "M1057"
+        }
+      ]
+    },
+    "required_hops": 2,
+    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q04",
+    "question": "Which mitigations address the ATT&CK technique Remote Desktop Protocol (T1021.001) used by Axiom (G0001)?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Axiom",
+        "attack_id": "G0001"
+      },
+      "technique": {
+        "name": "Remote Desktop Protocol",
+        "attack_id": "T1021.001"
+      },
+      "mitigations": [
+        {
+          "name": "User Account Management",
+          "attack_id": "M1018"
+        },
+        {
+          "name": "Privileged Account Management",
+          "attack_id": "M1026"
+        },
+        {
+          "name": "Operating System Configuration",
+          "attack_id": "M1028"
+        },
+        {
+          "name": "Network Segmentation",
+          "attack_id": "M1030"
+        },
+        {
+          "name": "Multi-factor Authentication",
+          "attack_id": "M1032"
+        },
+        {
+          "name": "Limit Access to Resource Over Network",
+          "attack_id": "M1035"
+        },
+        {
+          "name": "Disable or Remove Feature or Program",
+          "attack_id": "M1042"
+        },
+        {
+          "name": "Audit",
+          "attack_id": "M1047"
+        }
+      ]
+    },
+    "required_hops": 2,
+    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q05",
+    "question": "Which mitigations address the ATT&CK technique Valid Accounts (T1078) used by Axiom (G0001)?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Axiom",
+        "attack_id": "G0001"
+      },
+      "technique": {
+        "name": "Valid Accounts",
+        "attack_id": "T1078"
+      },
+      "mitigations": [
+        {
+          "name": "Application Developer Guidance",
+          "attack_id": "M1013"
+        },
+        {
+          "name": "Active Directory Configuration",
+          "attack_id": "M1015"
+        },
+        {
+          "name": "User Training",
+          "attack_id": "M1017"
+        },
+        {
+          "name": "User Account Management",
+          "attack_id": "M1018"
+        },
+        {
+          "name": "Privileged Account Management",
+          "attack_id": "M1026"
+        },
+        {
+          "name": "Password Policies",
+          "attack_id": "M1027"
+        },
+        {
+          "name": "Multi-factor Authentication",
+          "attack_id": "M1032"
+        },
+        {
+          "name": "Account Use Policies",
+          "attack_id": "M1036"
+        }
+      ]
+    },
+    "required_hops": 2,
+    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q06",
+    "question": "Which mitigations address the ATT&CK technique Drive-by Compromise (T1189) used by Axiom (G0001)?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Axiom",
+        "attack_id": "G0001"
+      },
+      "technique": {
+        "name": "Drive-by Compromise",
+        "attack_id": "T1189"
+      },
+      "mitigations": [
+        {
+          "name": "User Training",
+          "attack_id": "M1017"
+        },
+        {
+          "name": "Restrict Web-Based Content",
+          "attack_id": "M1021"
+        },
+        {
+          "name": "Application Isolation and Sandboxing",
+          "attack_id": "M1048"
+        },
+        {
+          "name": "Exploit Protection",
+          "attack_id": "M1050"
+        },
+        {
+          "name": "Update Software",
+          "attack_id": "M1051"
+        }
+      ]
+    },
+    "required_hops": 2,
+    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q07",
+    "question": "Which mitigations address the ATT&CK technique Exploit Public-Facing Application (T1190) used by Axiom (G0001)?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Axiom",
+        "attack_id": "G0001"
+      },
+      "technique": {
+        "name": "Exploit Public-Facing Application",
+        "attack_id": "T1190"
+      },
+      "mitigations": [
+        {
+          "name": "Vulnerability Scanning",
+          "attack_id": "M1016"
+        },
+        {
+          "name": "Privileged Account Management",
+          "attack_id": "M1026"
+        },
+        {
+          "name": "Network Segmentation",
+          "attack_id": "M1030"
+        },
+        {
+          "name": "Limit Access to Resource Over Network",
+          "attack_id": "M1035"
+        },
+        {
+          "name": "Filter Network Traffic",
+          "attack_id": "M1037"
+        },
+        {
+          "name": "Application Isolation and Sandboxing",
+          "attack_id": "M1048"
+        },
+        {
+          "name": "Exploit Protection",
+          "attack_id": "M1050"
+        },
+        {
+          "name": "Update Software",
+          "attack_id": "M1051"
+        }
+      ]
+    },
+    "required_hops": 2,
+    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q08",
+    "question": "Which mitigations address the ATT&CK technique Exploitation for Client Execution (T1203) used by Axiom (G0001)?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Axiom",
+        "attack_id": "G0001"
+      },
+      "technique": {
+        "name": "Exploitation for Client Execution",
+        "attack_id": "T1203"
+      },
+      "mitigations": [
+        {
+          "name": "Application Isolation and Sandboxing",
+          "attack_id": "M1048"
+        },
+        {
+          "name": "Exploit Protection",
+          "attack_id": "M1050"
+        },
+        {
+          "name": "Update Software",
+          "attack_id": "M1051"
+        }
+      ]
+    },
+    "required_hops": 2,
+    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q09",
+    "question": "Which mitigations address the ATT&CK technique Accessibility Features (T1546.008) used by Axiom (G0001)?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Axiom",
+        "attack_id": "G0001"
+      },
+      "technique": {
+        "name": "Accessibility Features",
+        "attack_id": "T1546.008"
+      },
+      "mitigations": [
+        {
+          "name": "Operating System Configuration",
+          "attack_id": "M1028"
+        },
+        {
+          "name": "Limit Access to Resource Over Network",
+          "attack_id": "M1035"
+        },
+        {
+          "name": "Execution Prevention",
+          "attack_id": "M1038"
+        }
+      ]
+    },
+    "required_hops": 2,
+    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q10",
+    "question": "Which mitigations address the ATT&CK technique Subvert Trust Controls (T1553) used by Axiom (G0001)?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Axiom",
+        "attack_id": "G0001"
+      },
+      "technique": {
+        "name": "Subvert Trust Controls",
+        "attack_id": "T1553"
+      },
+      "mitigations": [
+        {
+          "name": "Restrict Registry Permissions",
+          "attack_id": "M1024"
+        },
+        {
+          "name": "Privileged Account Management",
+          "attack_id": "M1026"
+        },
+        {
+          "name": "Operating System Configuration",
+          "attack_id": "M1028"
+        },
+        {
+          "name": "Execution Prevention",
+          "attack_id": "M1038"
+        },
+        {
+          "name": "Software Configuration",
+          "attack_id": "M1054"
+        }
+      ]
+    },
+    "required_hops": 2,
+    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q11",
+    "question": "Which mitigations address the ATT&CK technique Archive Collected Data (T1560) used by Axiom (G0001)?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Axiom",
+        "attack_id": "G0001"
+      },
+      "technique": {
+        "name": "Archive Collected Data",
+        "attack_id": "T1560"
+      },
+      "mitigations": [
+        {
+          "name": "Audit",
+          "attack_id": "M1047"
+        }
+      ]
+    },
+    "required_hops": 2,
+    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q12",
+    "question": "Which mitigations address the ATT&CK technique RDP Hijacking (T1563.002) used by Axiom (G0001)?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Axiom",
+        "attack_id": "G0001"
+      },
+      "technique": {
+        "name": "RDP Hijacking",
+        "attack_id": "T1563.002"
+      },
+      "mitigations": [
+        {
+          "name": "User Account Management",
+          "attack_id": "M1018"
+        },
+        {
+          "name": "Privileged Account Management",
+          "attack_id": "M1026"
+        },
+        {
+          "name": "Operating System Configuration",
+          "attack_id": "M1028"
+        },
+        {
+          "name": "Network Segmentation",
+          "attack_id": "M1030"
+        },
+        {
+          "name": "Limit Access to Resource Over Network",
+          "attack_id": "M1035"
+        },
+        {
+          "name": "Disable or Remove Feature or Program",
+          "attack_id": "M1042"
+        },
+        {
+          "name": "Audit",
+          "attack_id": "M1047"
+        }
+      ]
+    },
+    "required_hops": 2,
+    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q13",
+    "question": "Which mitigations address the ATT&CK technique Phishing (T1566) used by Axiom (G0001)?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Axiom",
+        "attack_id": "G0001"
+      },
+      "technique": {
+        "name": "Phishing",
+        "attack_id": "T1566"
+      },
+      "mitigations": [
+        {
+          "name": "User Training",
+          "attack_id": "M1017"
+        },
+        {
+          "name": "Restrict Web-Based Content",
+          "attack_id": "M1021"
+        },
+        {
+          "name": "Network Intrusion Prevention",
+          "attack_id": "M1031"
+        },
+        {
+          "name": "Audit",
+          "attack_id": "M1047"
+        },
+        {
+          "name": "Antivirus/Antimalware",
+          "attack_id": "M1049"
+        },
+        {
+          "name": "Software Configuration",
+          "attack_id": "M1054"
+        }
+      ]
+    },
+    "required_hops": 2,
+    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q14",
+    "question": "Which mitigations address the ATT&CK technique DNS Server (T1583.002) used by Axiom (G0001)?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Axiom",
+        "attack_id": "G0001"
+      },
+      "technique": {
+        "name": "DNS Server",
+        "attack_id": "T1583.002"
+      },
+      "mitigations": [
+        {
+          "name": "Pre-compromise",
+          "attack_id": "M1056"
+        }
+      ]
+    },
+    "required_hops": 2,
+    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q15",
+    "question": "Which mitigations address the ATT&CK technique Virtual Private Server (T1583.003) used by Axiom (G0001)?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Axiom",
+        "attack_id": "G0001"
+      },
+      "technique": {
+        "name": "Virtual Private Server",
+        "attack_id": "T1583.003"
+      },
+      "mitigations": [
+        {
+          "name": "Pre-compromise",
+          "attack_id": "M1056"
+        }
+      ]
+    },
+    "required_hops": 2,
+    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q16",
+    "question": "Which mitigations address the ATT&CK technique Botnet (T1584.005) used by Axiom (G0001)?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Axiom",
+        "attack_id": "G0001"
+      },
+      "technique": {
+        "name": "Botnet",
+        "attack_id": "T1584.005"
+      },
+      "mitigations": [
+        {
+          "name": "Pre-compromise",
+          "attack_id": "M1056"
+        }
+      ]
+    },
+    "required_hops": 2,
+    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q17",
+    "question": "Which mitigations address the ATT&CK technique LSASS Memory (T1003.001) used by Cleaver (G0003)?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Cleaver",
+        "attack_id": "G0003"
+      },
+      "technique": {
+        "name": "LSASS Memory",
+        "attack_id": "T1003.001"
+      },
+      "mitigations": [
+        {
+          "name": "User Training",
+          "attack_id": "M1017"
+        },
+        {
+          "name": "Privileged Process Integrity",
+          "attack_id": "M1025"
+        },
+        {
+          "name": "Privileged Account Management",
+          "attack_id": "M1026"
+        },
+        {
+          "name": "Password Policies",
+          "attack_id": "M1027"
+        },
+        {
+          "name": "Operating System Configuration",
+          "attack_id": "M1028"
+        },
+        {
+          "name": "Behavior Prevention on Endpoint",
+          "attack_id": "M1040"
+        },
+        {
+          "name": "Credential Access Protection",
+          "attack_id": "M1043"
+        }
+      ]
+    },
+    "required_hops": 2,
+    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q18",
+    "question": "Which mitigations address the ATT&CK technique ARP Cache Poisoning (T1557.002) used by Cleaver (G0003)?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Cleaver",
+        "attack_id": "G0003"
+      },
+      "technique": {
+        "name": "ARP Cache Poisoning",
+        "attack_id": "T1557.002"
+      },
+      "mitigations": [
+        {
+          "name": "User Training",
+          "attack_id": "M1017"
+        },
+        {
+          "name": "Network Intrusion Prevention",
+          "attack_id": "M1031"
+        },
+        {
+          "name": "Limit Access to Resource Over Network",
+          "attack_id": "M1035"
+        },
+        {
+          "name": "Filter Network Traffic",
+          "attack_id": "M1037"
+        },
+        {
+          "name": "Encrypt Sensitive Information",
+          "attack_id": "M1041"
+        },
+        {
+          "name": "Disable or Remove Feature or Program",
+          "attack_id": "M1042"
+        }
+      ]
+    },
+    "required_hops": 2,
+    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q19",
+    "question": "Which mitigations address the ATT&CK technique Social Media Accounts (T1585.001) used by Cleaver (G0003)?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Cleaver",
+        "attack_id": "G0003"
+      },
+      "technique": {
+        "name": "Social Media Accounts",
+        "attack_id": "T1585.001"
+      },
+      "mitigations": [
+        {
+          "name": "Pre-compromise",
+          "attack_id": "M1056"
+        }
+      ]
+    },
+    "required_hops": 2,
+    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q20",
+    "question": "Which mitigations address the ATT&CK technique Malware (T1587.001) used by Cleaver (G0003)?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Cleaver",
+        "attack_id": "G0003"
+      },
+      "technique": {
+        "name": "Malware",
+        "attack_id": "T1587.001"
+      },
+      "mitigations": [
+        {
+          "name": "Pre-compromise",
+          "attack_id": "M1056"
+        }
+      ]
+    },
+    "required_hops": 2,
+    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q21",
+    "question": "Which mitigations address the ATT&CK technique Tool (T1588.002) used by Cleaver (G0003)?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Cleaver",
+        "attack_id": "G0003"
+      },
+      "technique": {
+        "name": "Tool",
+        "attack_id": "T1588.002"
+      },
+      "mitigations": [
+        {
+          "name": "Pre-compromise",
+          "attack_id": "M1056"
+        }
+      ]
+    },
+    "required_hops": 2,
+    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q22",
+    "question": "Which mitigations address the ATT&CK technique LSASS Memory (T1003.001) used by Ke3chang (G0004)?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Ke3chang",
+        "attack_id": "G0004"
+      },
+      "technique": {
+        "name": "LSASS Memory",
+        "attack_id": "T1003.001"
+      },
+      "mitigations": [
+        {
+          "name": "User Training",
+          "attack_id": "M1017"
+        },
+        {
+          "name": "Privileged Process Integrity",
+          "attack_id": "M1025"
+        },
+        {
+          "name": "Privileged Account Management",
+          "attack_id": "M1026"
+        },
+        {
+          "name": "Password Policies",
+          "attack_id": "M1027"
+        },
+        {
+          "name": "Operating System Configuration",
+          "attack_id": "M1028"
+        },
+        {
+          "name": "Behavior Prevention on Endpoint",
+          "attack_id": "M1040"
+        },
+        {
+          "name": "Credential Access Protection",
+          "attack_id": "M1043"
+        }
+      ]
+    },
+    "required_hops": 2,
+    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q23",
+    "question": "Which mitigations address the ATT&CK technique Security Account Manager (T1003.002) used by Ke3chang (G0004)?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Ke3chang",
+        "attack_id": "G0004"
+      },
+      "technique": {
+        "name": "Security Account Manager",
+        "attack_id": "T1003.002"
+      },
+      "mitigations": [
+        {
+          "name": "User Training",
+          "attack_id": "M1017"
+        },
+        {
+          "name": "Privileged Account Management",
+          "attack_id": "M1026"
+        },
+        {
+          "name": "Password Policies",
+          "attack_id": "M1027"
+        },
+        {
+          "name": "Operating System Configuration",
+          "attack_id": "M1028"
+        }
+      ]
+    },
+    "required_hops": 2,
+    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q24",
+    "question": "Which mitigations address the ATT&CK technique NTDS (T1003.003) used by Ke3chang (G0004)?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Ke3chang",
+        "attack_id": "G0004"
+      },
+      "technique": {
+        "name": "NTDS",
+        "attack_id": "T1003.003"
+      },
+      "mitigations": [
+        {
+          "name": "User Training",
+          "attack_id": "M1017"
+        },
+        {
+          "name": "Privileged Account Management",
+          "attack_id": "M1026"
+        },
+        {
+          "name": "Password Policies",
+          "attack_id": "M1027"
+        },
+        {
+          "name": "Encrypt Sensitive Information",
+          "attack_id": "M1041"
+        }
+      ]
+    },
+    "required_hops": 2,
+    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  }
+]

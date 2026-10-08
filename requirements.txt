@@ -1,0 +1,2 @@
+# Checkpoint scripts use only the Python standard library.
+# Future application dependencies (neo4j, pydantic, etc.) will be added during implementation.

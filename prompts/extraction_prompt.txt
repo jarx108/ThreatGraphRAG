@@ -1,0 +1,54 @@
+You are an information extraction system for Cyber Threat Intelligence (CTI).
+
+TASK
+Extract only entities and relationships explicitly supported by the supplied text.
+Do not infer unsupported facts.
+
+ALLOWED ENTITY TYPES
+- ThreatGroup
+- Technique
+- Software
+- Campaign
+- Mitigation
+- Vulnerability
+- Document
+
+ALLOWED RELATIONSHIPS
+- USES
+- MITIGATES
+- ATTRIBUTED_TO
+- EXPLOITS
+- MENTIONED_IN
+
+RULES
+1. Preserve MITRE ATT&CK IDs (for example G0016, T1055, S0154, M1040) when the text provides them.
+2. Prefer canonical ATT&CK names, but preserve aliases in the aliases array.
+3. Every relationship must include evidence_text copied from the supplied text.
+4. confidence_score must be between 0 and 1.
+5. If the text does not support a relationship, do not create it.
+6. Return JSON only. Do not wrap the JSON in Markdown.
+
+OUTPUT FORMAT
+{
+  "entities": [
+    {
+      "name": "string",
+      "entity_type": "ThreatGroup|Technique|Software|Campaign|Mitigation|Vulnerability|Document",
+      "attack_id": "string or null",
+      "aliases": ["string"],
+      "confidence_score": 0.0
+    }
+  ],
+  "relationships": [
+    {
+      "source": "entity name",
+      "predicate": "USES|MITIGATES|ATTRIBUTED_TO|EXPLOITS|MENTIONED_IN",
+      "target": "entity name",
+      "evidence_text": "exact supporting text",
+      "confidence_score": 0.0
+    }
+  ]
+}
+
+CTI TEXT:
+{{text}}

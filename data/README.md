@@ -1,0 +1,1 @@
+Run `python scripts/build_benchmarks.py` from the repository root to create `gold_triples.json` (60 triples) and `eval_queries.json` (24 multi-hop QA records) from official MITRE Enterprise ATT&CK v19.2 STIX.

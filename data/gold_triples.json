@@ -1,0 +1,902 @@
+[
+  {
+    "subject": {
+      "name": "Application Developer Guidance",
+      "attack_id": "M1013",
+      "type": "Mitigation"
+    },
+    "predicate": "MITIGATES",
+    "object": {
+      "name": "Valid Accounts",
+      "attack_id": "T1078",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--c8acdf40-8237-487f-8255-91afa327705d",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Application Developer Guidance",
+      "attack_id": "M1013",
+      "type": "Mitigation"
+    },
+    "predicate": "MITIGATES",
+    "object": {
+      "name": "Supply Chain Compromise",
+      "attack_id": "T1195",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--3c740c2b-293a-4f6b-98a8-dde4a215eea1",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Application Developer Guidance",
+      "attack_id": "M1013",
+      "type": "Mitigation"
+    },
+    "predicate": "MITIGATES",
+    "object": {
+      "name": "Compromise Software Dependencies and Development Tools",
+      "attack_id": "T1195.001",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--ef48b966-327f-4795-a1d0-4baf949fad2f",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Application Developer Guidance",
+      "attack_id": "M1013",
+      "type": "Mitigation"
+    },
+    "predicate": "MITIGATES",
+    "object": {
+      "name": "Exploitation for Credential Access",
+      "attack_id": "T1212",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--6de628ac-2f5b-4563-8f54-c5243109221e",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Application Developer Guidance",
+      "attack_id": "M1013",
+      "type": "Mitigation"
+    },
+    "predicate": "MITIGATES",
+    "object": {
+      "name": "SMS Pumping",
+      "attack_id": "T1496.003",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--1bdf5794-9f6f-4d9a-9afd-542cefa858d0",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Application Developer Guidance",
+      "attack_id": "M1013",
+      "type": "Mitigation"
+    },
+    "predicate": "MITIGATES",
+    "object": {
+      "name": "Use Alternate Authentication Material",
+      "attack_id": "T1550",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--a53e9789-54e4-486c-8856-3281c9ef1a23",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Application Developer Guidance",
+      "attack_id": "M1013",
+      "type": "Mitigation"
+    },
+    "predicate": "MITIGATES",
+    "object": {
+      "name": "Application Access Token",
+      "attack_id": "T1550.001",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--9c41ad44-8a0f-40bc-b832-ad7aa99e5290",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Application Developer Guidance",
+      "attack_id": "M1013",
+      "type": "Mitigation"
+    },
+    "predicate": "MITIGATES",
+    "object": {
+      "name": "Inter-Process Communication",
+      "attack_id": "T1559",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--f60e5a0d-cfdf-4c4e-be35-af5a2bdbc131",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Application Developer Guidance",
+      "attack_id": "M1013",
+      "type": "Mitigation"
+    },
+    "predicate": "MITIGATES",
+    "object": {
+      "name": "XPC Services",
+      "attack_id": "T1559.003",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--9e753c36-66d8-4f48-8b06-fbb9fdc92f76",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Application Developer Guidance",
+      "attack_id": "M1013",
+      "type": "Mitigation"
+    },
+    "predicate": "MITIGATES",
+    "object": {
+      "name": "Hide Artifacts",
+      "attack_id": "T1564",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--508cef53-f7ff-4e64-9ab3-dedefbba697b",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Application Developer Guidance",
+      "attack_id": "M1013",
+      "type": "Mitigation"
+    },
+    "predicate": "MITIGATES",
+    "object": {
+      "name": "Resource Forking",
+      "attack_id": "T1564.009",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--da7b2203-dade-4ec0-85a5-dada9409ae2f",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Application Developer Guidance",
+      "attack_id": "M1013",
+      "type": "Mitigation"
+    },
+    "predicate": "MITIGATES",
+    "object": {
+      "name": "File/Path Exclusions",
+      "attack_id": "T1564.012",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--7acdcde3-1065-4393-ae6b-80ac95b2607d",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Application Developer Guidance",
+      "attack_id": "M1013",
+      "type": "Mitigation"
+    },
+    "predicate": "MITIGATES",
+    "object": {
+      "name": "Hijack Execution Flow",
+      "attack_id": "T1574",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--4f806196-7c20-4923-ae01-8f0f7f27a4a7",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Application Developer Guidance",
+      "attack_id": "M1013",
+      "type": "Mitigation"
+    },
+    "predicate": "MITIGATES",
+    "object": {
+      "name": "DLL",
+      "attack_id": "T1574.001",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--e575c5f9-c9ff-4b84-920a-c483d9442c3a",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Application Developer Guidance",
+      "attack_id": "M1013",
+      "type": "Mitigation"
+    },
+    "predicate": "MITIGATES",
+    "object": {
+      "name": "Search Open Websites/Domains",
+      "attack_id": "T1593",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--f0c57085-ccd9-48d1-b35d-1b0f1ba80e96",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Application Developer Guidance",
+      "attack_id": "M1013",
+      "type": "Mitigation"
+    },
+    "predicate": "MITIGATES",
+    "object": {
+      "name": "Code Repositories",
+      "attack_id": "T1593.003",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--aae309ee-9d15-4188-8f74-68c581a3a720",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Application Developer Guidance",
+      "attack_id": "M1013",
+      "type": "Mitigation"
+    },
+    "predicate": "MITIGATES",
+    "object": {
+      "name": "Plist File Modification",
+      "attack_id": "T1647",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--3c5b3ca4-af5a-47dd-8dd4-57d2a690c2a9",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Active Directory Configuration",
+      "attack_id": "M1015",
+      "type": "Mitigation"
+    },
+    "predicate": "MITIGATES",
+    "object": {
+      "name": "OS Credential Dumping",
+      "attack_id": "T1003",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--fc31837d-530f-45e5-b9f8-bf6268c3ef03",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Active Directory Configuration",
+      "attack_id": "M1015",
+      "type": "Mitigation"
+    },
+    "predicate": "MITIGATES",
+    "object": {
+      "name": "Cached Domain Credentials",
+      "attack_id": "T1003.005",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--6c1da818-6e35-4fa8-ad40-e45c2c90e016",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Active Directory Configuration",
+      "attack_id": "M1015",
+      "type": "Mitigation"
+    },
+    "predicate": "MITIGATES",
+    "object": {
+      "name": "DCSync",
+      "attack_id": "T1003.006",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--7b641542-852b-47c0-a604-f13998adb892",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Trojan.Mebromi",
+      "attack_id": "S0001",
+      "type": "Software"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "System Firmware",
+      "attack_id": "T1542.001",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--89cbf71b-9189-43ac-927f-e5aaf9d66df0",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Mimikatz",
+      "attack_id": "S0002",
+      "type": "Software"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "LSASS Memory",
+      "attack_id": "T1003.001",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--b7930db8-2cb9-4ecf-b3d3-7425f99140d8",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Mimikatz",
+      "attack_id": "S0002",
+      "type": "Software"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Security Account Manager",
+      "attack_id": "T1003.002",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--7f04a14f-ab65-4ad5-9d67-a4b509ba8087",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Mimikatz",
+      "attack_id": "S0002",
+      "type": "Software"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "LSA Secrets",
+      "attack_id": "T1003.004",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--f5e29f3a-99b1-4c45-952b-c238f72435ab",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Mimikatz",
+      "attack_id": "S0002",
+      "type": "Software"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "DCSync",
+      "attack_id": "T1003.006",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--0209cfd7-95d3-4bc5-8f0e-72a70b245fe9",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Mimikatz",
+      "attack_id": "S0002",
+      "type": "Software"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Account Manipulation",
+      "attack_id": "T1098",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--6e641c36-188b-480e-b177-e412cd000b34",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Mimikatz",
+      "attack_id": "S0002",
+      "type": "Software"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "SID-History Injection",
+      "attack_id": "T1134.005",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--3e5cf341-4707-4de3-bb06-43530ee3e90f",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Mimikatz",
+      "attack_id": "S0002",
+      "type": "Software"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Rogue Domain Controller",
+      "attack_id": "T1207",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--15fe2d8e-9a4e-433e-9dca-d7329e7ca846",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Mimikatz",
+      "attack_id": "S0002",
+      "type": "Software"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Security Support Provider",
+      "attack_id": "T1547.005",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--41f04732-8fdc-4b2f-9e22-7b78ff650e5d",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Mimikatz",
+      "attack_id": "S0002",
+      "type": "Software"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Pass the Hash",
+      "attack_id": "T1550.002",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--6b83bc1e-edfc-4c6a-961f-d3757ae6a234",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Mimikatz",
+      "attack_id": "S0002",
+      "type": "Software"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Pass the Ticket",
+      "attack_id": "T1550.003",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--76037b22-a3e4-40d3-bd56-699d1ea4e97e",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Mimikatz",
+      "attack_id": "S0002",
+      "type": "Software"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Private Keys",
+      "attack_id": "T1552.004",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--1c5b8ff2-400a-4e0f-a819-3cc8f1bc76b8",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Mimikatz",
+      "attack_id": "S0002",
+      "type": "Software"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Credentials from Password Stores",
+      "attack_id": "T1555",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--11d0f089-6dc7-4468-b186-e1a8b621051b",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Mimikatz",
+      "attack_id": "S0002",
+      "type": "Software"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Credentials from Web Browsers",
+      "attack_id": "T1555.003",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--7804d727-91bc-41bd-9b05-686d550e9e04",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Mimikatz",
+      "attack_id": "S0002",
+      "type": "Software"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Windows Credential Manager",
+      "attack_id": "T1555.004",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--c92047b8-50d6-4fde-8acd-98132dcdc32f",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Mimikatz",
+      "attack_id": "S0002",
+      "type": "Software"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Golden Ticket",
+      "attack_id": "T1558.001",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--7b8254f2-bfbb-4775-aaf8-3b5fa3457ee9",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Mimikatz",
+      "attack_id": "S0002",
+      "type": "Software"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Silver Ticket",
+      "attack_id": "T1558.002",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--bf080191-d58e-4834-8b4f-7315df4d76bf",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Mimikatz",
+      "attack_id": "S0002",
+      "type": "Software"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Steal or Forge Authentication Certificates",
+      "attack_id": "T1649",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--ed48d88f-840e-4653-84df-7181afc6dfd3",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "RIPTIDE",
+      "attack_id": "S0003",
+      "type": "Software"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Web Protocols",
+      "attack_id": "T1071.001",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--c4ce39f8-371c-45dd-a8d2-a411a6f0678d",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "RIPTIDE",
+      "attack_id": "S0003",
+      "type": "Software"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Symmetric Cryptography",
+      "attack_id": "T1573.001",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--c945e5f2-5622-46ce-8b35-468d41d2af46",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Axiom",
+      "attack_id": "G0001",
+      "type": "ThreatGroup"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Hikit",
+      "attack_id": "S0009",
+      "type": "Software"
+    },
+    "stix_relationship_id": "relationship--a8122755-90fe-4b68-8fa1-55ed7be90931",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Axiom",
+      "attack_id": "G0001",
+      "type": "ThreatGroup"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "PoisonIvy",
+      "attack_id": "S0012",
+      "type": "Software"
+    },
+    "stix_relationship_id": "relationship--abe1a402-9ad5-43d0-9e5d-cabe4269fc06",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Axiom",
+      "attack_id": "G0001",
+      "type": "ThreatGroup"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "PlugX",
+      "attack_id": "S0013",
+      "type": "Software"
+    },
+    "stix_relationship_id": "relationship--5ee26367-1517-4fda-9dbe-8f9e63cc01eb",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Axiom",
+      "attack_id": "G0001",
+      "type": "ThreatGroup"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Derusbi",
+      "attack_id": "S0021",
+      "type": "Software"
+    },
+    "stix_relationship_id": "relationship--e4c7c4b7-fe19-4433-acd9-ec94f436f381",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Axiom",
+      "attack_id": "G0001",
+      "type": "ThreatGroup"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "gh0st RAT",
+      "attack_id": "S0032",
+      "type": "Software"
+    },
+    "stix_relationship_id": "relationship--4f8411e1-71c2-46da-a789-9403c4b1f967",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Axiom",
+      "attack_id": "G0001",
+      "type": "ThreatGroup"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Hydraq",
+      "attack_id": "S0203",
+      "type": "Software"
+    },
+    "stix_relationship_id": "relationship--f0094ba8-a513-49bf-a5d7-961aaab13380",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Axiom",
+      "attack_id": "G0001",
+      "type": "ThreatGroup"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "ZxShell",
+      "attack_id": "S0412",
+      "type": "Software"
+    },
+    "stix_relationship_id": "relationship--1aee1049-89be-45b8-ae2f-83bf4e35d5a3",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Axiom",
+      "attack_id": "G0001",
+      "type": "ThreatGroup"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Zox",
+      "attack_id": "S0672",
+      "type": "Software"
+    },
+    "stix_relationship_id": "relationship--5329433a-2e84-4f56-b933-01620892e333",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Axiom",
+      "attack_id": "G0001",
+      "type": "ThreatGroup"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Steganography",
+      "attack_id": "T1001.002",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--0c393451-a750-4c8a-81be-4d0e9e84a6eb",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Axiom",
+      "attack_id": "G0001",
+      "type": "ThreatGroup"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "OS Credential Dumping",
+      "attack_id": "T1003",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--fad2a504-6e00-4892-bf88-b49d6d18788c",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Axiom",
+      "attack_id": "G0001",
+      "type": "ThreatGroup"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Data from Local System",
+      "attack_id": "T1005",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--161c58eb-29d7-4de3-aca8-3bda085f19a3",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Axiom",
+      "attack_id": "G0001",
+      "type": "ThreatGroup"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Remote Desktop Protocol",
+      "attack_id": "T1021.001",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--70f3eaca-179d-4412-ad32-c4e3cf60c27c",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Axiom",
+      "attack_id": "G0001",
+      "type": "ThreatGroup"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Valid Accounts",
+      "attack_id": "T1078",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--8a83df94-30d3-4d4b-94c0-d988e3fcfc33",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Axiom",
+      "attack_id": "G0001",
+      "type": "ThreatGroup"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Drive-by Compromise",
+      "attack_id": "T1189",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--37880f36-c47a-4d1f-aedf-bb7d9fb2fd9f",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Axiom",
+      "attack_id": "G0001",
+      "type": "ThreatGroup"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Exploit Public-Facing Application",
+      "attack_id": "T1190",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--e11a3d87-d9cf-4dcf-b722-fef4b0a324b4",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Axiom",
+      "attack_id": "G0001",
+      "type": "ThreatGroup"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Exploitation for Client Execution",
+      "attack_id": "T1203",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--7ab16f65-9be6-46ec-8c2c-96f58e089df0",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Axiom",
+      "attack_id": "G0001",
+      "type": "ThreatGroup"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Accessibility Features",
+      "attack_id": "T1546.008",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--b9f4c6ef-d0bd-4651-9445-4705e1fd85f2",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Axiom",
+      "attack_id": "G0001",
+      "type": "ThreatGroup"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Subvert Trust Controls",
+      "attack_id": "T1553",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--64aa92d9-abdb-494c-8646-8548aa7c25a5",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Axiom",
+      "attack_id": "G0001",
+      "type": "ThreatGroup"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "Archive Collected Data",
+      "attack_id": "T1560",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--2202d670-a6f3-42eb-ae1b-1ae615c3b620",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "subject": {
+      "name": "Axiom",
+      "attack_id": "G0001",
+      "type": "ThreatGroup"
+    },
+    "predicate": "USES",
+    "object": {
+      "name": "RDP Hijacking",
+      "attack_id": "T1563.002",
+      "type": "Technique"
+    },
+    "stix_relationship_id": "relationship--a78310c3-ee57-465a-9983-13c6a7cd1d4f",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  }
+]
