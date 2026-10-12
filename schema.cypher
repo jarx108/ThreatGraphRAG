@@ -34,14 +34,11 @@ CREATE INDEX software_name IF NOT EXISTS FOR (n:Software) ON (n.name);
 CREATE INDEX mitigation_name IF NOT EXISTS FOR (n:Mitigation) ON (n.name);
 CREATE INDEX campaign_name IF NOT EXISTS FOR (n:Campaign) ON (n.name);
 
-// Optional vector index. Change dimensions if a different embedding model is used.
-// Example below assumes a 1536-dimensional text embedding.
-CREATE VECTOR INDEX chunk_embedding IF NOT EXISTS
-FOR (n:Chunk) ON n.embedding
-OPTIONS {indexConfig: {
-  `vector.dimensions`: 1536,
-  `vector.similarity_function`: 'cosine'
-}};
+// The chunk_embedding vector index is created dynamically by
+// src/threatgraph/graph/schema_init.py using the dimensions of whatever
+// embedding model is configured (EMBEDDING_MODEL / EMBEDDING_DIM env vars),
+// since this static file cannot know that value in advance. Default: 384
+// dims for sentence-transformers/all-MiniLM-L6-v2.
 
 // Intended relationship vocabulary:
 // (:ThreatGroup)-[:USES]->(:Technique)

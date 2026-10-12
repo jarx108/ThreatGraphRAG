@@ -13,12 +13,21 @@ ALLOWED ENTITY TYPES
 - Vulnerability
 - Document
 
-ALLOWED RELATIONSHIPS
-- USES
-- MITIGATES
-- ATTRIBUTED_TO
-- EXPLOITS
-- MENTIONED_IN
+ALLOWED RELATIONSHIPS (exact subject-type -> object-type shapes; no other
+combination is valid, even if the predicate name matches)
+- ThreatGroup USES Technique
+- ThreatGroup USES Software
+- Software USES Technique
+- Mitigation MITIGATES Technique
+- Campaign ATTRIBUTED_TO ThreatGroup
+- ThreatGroup EXPLOITS Vulnerability
+- Software EXPLOITS Vulnerability
+- ThreatGroup MENTIONED_IN Document
+- Technique MENTIONED_IN Document
+- Software MENTIONED_IN Document
+- Campaign MENTIONED_IN Document
+- Mitigation MENTIONED_IN Document
+- Vulnerability MENTIONED_IN Document
 
 RULES
 1. Preserve MITRE ATT&CK IDs (for example G0016, T1055, S0154, M1040) when the text provides them.
@@ -27,6 +36,14 @@ RULES
 4. confidence_score must be between 0 and 1.
 5. If the text does not support a relationship, do not create it.
 6. Return JSON only. Do not wrap the JSON in Markdown.
+7. Ignore inline bibliographic citation markers such as "(Citation: Kaspersky
+   Winnti April 2013)" -- these are source footnotes, not CTI entities. Do
+   not create a Document entity or a MENTIONED_IN relationship for them. Only
+   use the Document entity type for a named report/advisory that is itself
+   the subject of a sentence (for example, "a CISA advisory describes...").
+8. Every relationship must match one of the exact subject-type/object-type
+   shapes listed under ALLOWED RELATIONSHIPS above. If you are unsure a
+   relationship fits one of those shapes, omit it rather than guessing.
 
 OUTPUT FORMAT
 {

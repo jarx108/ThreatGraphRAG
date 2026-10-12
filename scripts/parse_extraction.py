@@ -19,7 +19,11 @@ def _confidence(value: Any, field: str) -> float:
         raise ExtractionValidationError(f"{field} must be in [0, 1]")
     return value
 
-def parse_extraction(raw: str) -> dict:
+def parse_extraction(raw: str, check_references: bool = True) -> dict:
+    """Strict shape validation of raw LLM extraction output. With
+    check_references=False, a relationship naming an undeclared entity is
+    left for the caller's per-item validation instead of rejecting the whole
+    document (threatgraph.extraction.extractor does this)."""
     try:
         obj = json.loads(raw)
     except json.JSONDecodeError as exc:
@@ -52,7 +56,7 @@ def parse_extraction(raw: str) -> dict:
             raise ExtractionValidationError(f"Relationship {i} has incorrect fields")
         if rel["predicate"] not in PREDICATES:
             raise ExtractionValidationError(f"Relationship {i} has unsupported predicate")
-        if rel["source"] not in names or rel["target"] not in names:
+        if check_references and (rel["source"] not in names or rel["target"] not in names):
             raise ExtractionValidationError(f"Relationship {i} references an undeclared entity")
         if not isinstance(rel["evidence_text"], str) or not rel["evidence_text"].strip():
             raise ExtractionValidationError(f"Relationship {i} requires evidence_text")

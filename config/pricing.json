@@ -1,0 +1,9 @@
+{
+  "_comment": "Approximate list prices in USD per 1M tokens, editable. VERIFY against https://www.anthropic.com/pricing, https://openai.com/api/pricing, and https://ai.google.dev/gemini-api/docs/pricing before citing in any report -- prices change and this file is not an authoritative source.",
+  "_note_gemini": "gemini-3.8-flash (released after this project's knowledge cutoff) is deliberately omitted below rather than given a guessed price; threatgraph.rag.llm_provider reports estimated_cost_usd=null for any model missing here. Add a verified entry once you've checked the current Gemini pricing page.",
+  "claude-sonnet-5": {"input_per_mtok_usd": 3.0, "output_per_mtok_usd": 15.0},
+  "claude-haiku-4-5-20251001": {"input_per_mtok_usd": 0.8, "output_per_mtok_usd": 4.0},
+  "claude-opus-5": {"input_per_mtok_usd": 15.0, "output_per_mtok_usd": 75.0},
+  "gpt-4o": {"input_per_mtok_usd": 2.5, "output_per_mtok_usd": 10.0},
+  "gpt-4o-mini": {"input_per_mtok_usd": 0.15, "output_per_mtok_usd": 0.6}
+}

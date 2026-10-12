@@ -1,2 +1,21 @@
-# Checkpoint scripts use only the Python standard library.
-# Future application dependencies (neo4j, pydantic, etc.) will be added during implementation.
+# Direct dependencies of the main project environment (human-readable).
+# For reproducible installs use requirements.lock, which pins every package
+# (including transitive ones) to the exact version the results were produced
+# with; scripts/setup.sh installs from the lock file. RAGAS evaluation runs in
+# a separate isolated virtualenv (requirements-ragas.txt) -- see
+# src/threatgraph/eval/ragas_eval.py for why.
+pydantic>=2.0
+neo4j>=5.14
+sentence-transformers
+anthropic
+openai
+google-genai
+streamlit
+fastapi
+uvicorn
+numpy
+pandas
+scipy
+matplotlib
+python-dotenv
+pytest
