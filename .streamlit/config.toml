@@ -1,0 +1,10 @@
+# Dark theme for the legacy Streamlit UI (make ui-streamlit), matching the
+# palette of the web frontend in frontend/.
+[theme]
+base = "dark"
+primaryColor = "#2fd7c3"
+backgroundColor = "#07090e"
+secondaryBackgroundColor = "#10151e"
+textColor = "#e8ecf4"
+font = "Roboto Mono:https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap"
+codeFont = "Roboto Mono"
