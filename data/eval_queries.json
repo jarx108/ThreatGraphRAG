@@ -1,6 +1,7 @@
 [
   {
     "id": "Q01",
+    "category": "group_technique_mitigation",
     "question": "Which mitigations address the ATT&CK technique Steganography (T1001.002) used by Axiom (G0001)?",
     "expected_answer": {
       "threat_group": {
@@ -24,6 +25,7 @@
   },
   {
     "id": "Q02",
+    "category": "group_technique_mitigation",
     "question": "Which mitigations address the ATT&CK technique OS Credential Dumping (T1003) used by Axiom (G0001)?",
     "expected_answer": {
       "threat_group": {
@@ -79,6 +81,7 @@
   },
   {
     "id": "Q03",
+    "category": "group_technique_mitigation",
     "question": "Which mitigations address the ATT&CK technique Data from Local System (T1005) used by Axiom (G0001)?",
     "expected_answer": {
       "threat_group": {
@@ -102,6 +105,7 @@
   },
   {
     "id": "Q04",
+    "category": "group_technique_mitigation",
     "question": "Which mitigations address the ATT&CK technique Remote Desktop Protocol (T1021.001) used by Axiom (G0001)?",
     "expected_answer": {
       "threat_group": {
@@ -153,6 +157,7 @@
   },
   {
     "id": "Q05",
+    "category": "group_technique_mitigation",
     "question": "Which mitigations address the ATT&CK technique Valid Accounts (T1078) used by Axiom (G0001)?",
     "expected_answer": {
       "threat_group": {
@@ -204,6 +209,7 @@
   },
   {
     "id": "Q06",
+    "category": "group_technique_mitigation",
     "question": "Which mitigations address the ATT&CK technique Drive-by Compromise (T1189) used by Axiom (G0001)?",
     "expected_answer": {
       "threat_group": {
@@ -243,6 +249,7 @@
   },
   {
     "id": "Q07",
+    "category": "group_technique_mitigation",
     "question": "Which mitigations address the ATT&CK technique Exploit Public-Facing Application (T1190) used by Axiom (G0001)?",
     "expected_answer": {
       "threat_group": {
@@ -294,6 +301,7 @@
   },
   {
     "id": "Q08",
+    "category": "group_technique_mitigation",
     "question": "Which mitigations address the ATT&CK technique Exploitation for Client Execution (T1203) used by Axiom (G0001)?",
     "expected_answer": {
       "threat_group": {
@@ -325,6 +333,7 @@
   },
   {
     "id": "Q09",
+    "category": "group_technique_mitigation",
     "question": "Which mitigations address the ATT&CK technique Accessibility Features (T1546.008) used by Axiom (G0001)?",
     "expected_answer": {
       "threat_group": {
@@ -356,6 +365,7 @@
   },
   {
     "id": "Q10",
+    "category": "group_technique_mitigation",
     "question": "Which mitigations address the ATT&CK technique Subvert Trust Controls (T1553) used by Axiom (G0001)?",
     "expected_answer": {
       "threat_group": {
@@ -395,6 +405,7 @@
   },
   {
     "id": "Q11",
+    "category": "group_technique_mitigation",
     "question": "Which mitigations address the ATT&CK technique Archive Collected Data (T1560) used by Axiom (G0001)?",
     "expected_answer": {
       "threat_group": {
@@ -418,6 +429,7 @@
   },
   {
     "id": "Q12",
+    "category": "group_technique_mitigation",
     "question": "Which mitigations address the ATT&CK technique RDP Hijacking (T1563.002) used by Axiom (G0001)?",
     "expected_answer": {
       "threat_group": {
@@ -465,6 +477,7 @@
   },
   {
     "id": "Q13",
+    "category": "group_technique_mitigation",
     "question": "Which mitigations address the ATT&CK technique Phishing (T1566) used by Axiom (G0001)?",
     "expected_answer": {
       "threat_group": {
@@ -508,6 +521,7 @@
   },
   {
     "id": "Q14",
+    "category": "group_technique_mitigation",
     "question": "Which mitigations address the ATT&CK technique DNS Server (T1583.002) used by Axiom (G0001)?",
     "expected_answer": {
       "threat_group": {
@@ -531,324 +545,2958 @@
   },
   {
     "id": "Q15",
-    "question": "Which mitigations address the ATT&CK technique Virtual Private Server (T1583.003) used by Axiom (G0001)?",
+    "category": "group_software_technique",
+    "question": "Which ATT&CK techniques does Hikit (S0009), software used by Axiom (G0001), implement?",
     "expected_answer": {
       "threat_group": {
         "name": "Axiom",
         "attack_id": "G0001"
       },
-      "technique": {
-        "name": "Virtual Private Server",
-        "attack_id": "T1583.003"
+      "software": {
+        "name": "Hikit",
+        "attack_id": "S0009"
       },
-      "mitigations": [
+      "techniques": [
         {
-          "name": "Pre-compromise",
-          "attack_id": "M1056"
+          "name": "Data from Local System",
+          "attack_id": "T1005"
+        },
+        {
+          "name": "Rootkit",
+          "attack_id": "T1014"
+        },
+        {
+          "name": "Windows Command Shell",
+          "attack_id": "T1059.003"
+        },
+        {
+          "name": "Web Protocols",
+          "attack_id": "T1071.001"
+        },
+        {
+          "name": "Internal Proxy",
+          "attack_id": "T1090.001"
+        },
+        {
+          "name": "Ingress Tool Transfer",
+          "attack_id": "T1105"
+        },
+        {
+          "name": "Install Root Certificate",
+          "attack_id": "T1553.004"
+        },
+        {
+          "name": "Code Signing Policy Modification",
+          "attack_id": "T1553.006"
+        },
+        {
+          "name": "Phishing",
+          "attack_id": "T1566"
+        },
+        {
+          "name": "Symmetric Cryptography",
+          "attack_id": "T1573.001"
+        },
+        {
+          "name": "DLL",
+          "attack_id": "T1574.001"
         }
       ]
     },
     "required_hops": 2,
-    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "graph_path": "ThreatGroup -USES-> Software -USES-> Technique",
     "source": "MITRE ATT&CK Enterprise v19.2"
   },
   {
     "id": "Q16",
-    "question": "Which mitigations address the ATT&CK technique Botnet (T1584.005) used by Axiom (G0001)?",
+    "category": "group_software_technique",
+    "question": "Which ATT&CK techniques does PoisonIvy (S0012), software used by Axiom (G0001), implement?",
     "expected_answer": {
       "threat_group": {
         "name": "Axiom",
         "attack_id": "G0001"
       },
-      "technique": {
-        "name": "Botnet",
-        "attack_id": "T1584.005"
+      "software": {
+        "name": "PoisonIvy",
+        "attack_id": "S0012"
       },
-      "mitigations": [
+      "techniques": [
         {
-          "name": "Pre-compromise",
-          "attack_id": "M1056"
+          "name": "Data from Local System",
+          "attack_id": "T1005"
+        },
+        {
+          "name": "Application Window Discovery",
+          "attack_id": "T1010"
+        },
+        {
+          "name": "Rootkit",
+          "attack_id": "T1014"
+        },
+        {
+          "name": "Obfuscated Files or Information",
+          "attack_id": "T1027"
+        },
+        {
+          "name": "Dynamic-link Library Injection",
+          "attack_id": "T1055.001"
+        },
+        {
+          "name": "Keylogging",
+          "attack_id": "T1056.001"
+        },
+        {
+          "name": "Windows Command Shell",
+          "attack_id": "T1059.003"
+        },
+        {
+          "name": "Local Data Staging",
+          "attack_id": "T1074.001"
+        },
+        {
+          "name": "Ingress Tool Transfer",
+          "attack_id": "T1105"
+        },
+        {
+          "name": "Modify Registry",
+          "attack_id": "T1112"
+        },
+        {
+          "name": "Mutual Exclusion",
+          "attack_id": "T1480.002"
+        },
+        {
+          "name": "Windows Service",
+          "attack_id": "T1543.003"
+        },
+        {
+          "name": "Registry Run Keys / Startup Folder",
+          "attack_id": "T1547.001"
+        },
+        {
+          "name": "Active Setup",
+          "attack_id": "T1547.014"
+        },
+        {
+          "name": "Symmetric Cryptography",
+          "attack_id": "T1573.001"
         }
       ]
     },
     "required_hops": 2,
-    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "graph_path": "ThreatGroup -USES-> Software -USES-> Technique",
     "source": "MITRE ATT&CK Enterprise v19.2"
   },
   {
     "id": "Q17",
-    "question": "Which mitigations address the ATT&CK technique LSASS Memory (T1003.001) used by Cleaver (G0003)?",
+    "category": "group_software_technique",
+    "question": "Which ATT&CK techniques does PlugX (S0013), software used by Axiom (G0001), implement?",
     "expected_answer": {
       "threat_group": {
-        "name": "Cleaver",
-        "attack_id": "G0003"
+        "name": "Axiom",
+        "attack_id": "G0001"
       },
-      "technique": {
-        "name": "LSASS Memory",
-        "attack_id": "T1003.001"
+      "software": {
+        "name": "PlugX",
+        "attack_id": "S0013"
       },
-      "mitigations": [
+      "techniques": [
         {
-          "name": "User Training",
-          "attack_id": "M1017"
+          "name": "Query Registry",
+          "attack_id": "T1012"
         },
         {
-          "name": "Privileged Process Integrity",
-          "attack_id": "M1025"
+          "name": "System Network Configuration Discovery",
+          "attack_id": "T1016"
         },
         {
-          "name": "Privileged Account Management",
-          "attack_id": "M1026"
+          "name": "Obfuscated Files or Information",
+          "attack_id": "T1027"
         },
         {
-          "name": "Password Policies",
-          "attack_id": "M1027"
+          "name": "Binary Padding",
+          "attack_id": "T1027.001"
         },
         {
-          "name": "Operating System Configuration",
-          "attack_id": "M1028"
+          "name": "Dynamic API Resolution",
+          "attack_id": "T1027.007"
         },
         {
-          "name": "Behavior Prevention on Endpoint",
-          "attack_id": "M1040"
+          "name": "Encrypted/Encoded File",
+          "attack_id": "T1027.013"
         },
         {
-          "name": "Credential Access Protection",
-          "attack_id": "M1043"
+          "name": "System Owner/User Discovery",
+          "attack_id": "T1033"
+        },
+        {
+          "name": "Masquerade Task or Service",
+          "attack_id": "T1036.004"
+        },
+        {
+          "name": "Match Legitimate Resource Name or Location",
+          "attack_id": "T1036.005"
+        },
+        {
+          "name": "Exfiltration Over C2 Channel",
+          "attack_id": "T1041"
+        },
+        {
+          "name": "System Network Connections Discovery",
+          "attack_id": "T1049"
+        },
+        {
+          "name": "Scheduled Task",
+          "attack_id": "T1053.005"
+        },
+        {
+          "name": "Keylogging",
+          "attack_id": "T1056.001"
+        },
+        {
+          "name": "Process Discovery",
+          "attack_id": "T1057"
+        },
+        {
+          "name": "Windows Command Shell",
+          "attack_id": "T1059.003"
+        },
+        {
+          "name": "File Deletion",
+          "attack_id": "T1070.004"
+        },
+        {
+          "name": "Clear Persistence",
+          "attack_id": "T1070.009"
+        },
+        {
+          "name": "Web Protocols",
+          "attack_id": "T1071.001"
+        },
+        {
+          "name": "DNS",
+          "attack_id": "T1071.004"
+        },
+        {
+          "name": "Local Data Staging",
+          "attack_id": "T1074.001"
+        },
+        {
+          "name": "System Information Discovery",
+          "attack_id": "T1082"
+        },
+        {
+          "name": "File and Directory Discovery",
+          "attack_id": "T1083"
+        },
+        {
+          "name": "Replication Through Removable Media",
+          "attack_id": "T1091"
+        },
+        {
+          "name": "Non-Application Layer Protocol",
+          "attack_id": "T1095"
+        },
+        {
+          "name": "Dead Drop Resolver",
+          "attack_id": "T1102.001"
+        },
+        {
+          "name": "Ingress Tool Transfer",
+          "attack_id": "T1105"
+        },
+        {
+          "name": "Native API",
+          "attack_id": "T1106"
+        },
+        {
+          "name": "Modify Registry",
+          "attack_id": "T1112"
+        },
+        {
+          "name": "Screen Capture",
+          "attack_id": "T1113"
+        },
+        {
+          "name": "Peripheral Device Discovery",
+          "attack_id": "T1120"
+        },
+        {
+          "name": "System Time Discovery",
+          "attack_id": "T1124"
+        },
+        {
+          "name": "MSBuild",
+          "attack_id": "T1127.001"
+        },
+        {
+          "name": "Network Share Discovery",
+          "attack_id": "T1135"
+        },
+        {
+          "name": "Deobfuscate/Decode Files or Information",
+          "attack_id": "T1140"
+        },
+        {
+          "name": "Malicious File",
+          "attack_id": "T1204.002"
+        },
+        {
+          "name": "Mutual Exclusion",
+          "attack_id": "T1480.002"
+        },
+        {
+          "name": "System Checks",
+          "attack_id": "T1497.001"
+        },
+        {
+          "name": "Windows Service",
+          "attack_id": "T1543.003"
+        },
+        {
+          "name": "Registry Run Keys / Startup Folder",
+          "attack_id": "T1547.001"
+        },
+        {
+          "name": "Hidden Files and Directories",
+          "attack_id": "T1564.001"
+        },
+        {
+          "name": "Hidden Window",
+          "attack_id": "T1564.003"
+        },
+        {
+          "name": "Non-Standard Port",
+          "attack_id": "T1571"
+        },
+        {
+          "name": "Symmetric Cryptography",
+          "attack_id": "T1573.001"
+        },
+        {
+          "name": "DLL",
+          "attack_id": "T1574.001"
+        },
+        {
+          "name": "System Location Discovery",
+          "attack_id": "T1614"
+        },
+        {
+          "name": "Reflective Code Loading",
+          "attack_id": "T1620"
+        },
+        {
+          "name": "Debugger Evasion",
+          "attack_id": "T1622"
+        },
+        {
+          "name": "Local Storage Discovery",
+          "attack_id": "T1680"
+        },
+        {
+          "name": "Disable or Modify System Firewall",
+          "attack_id": "T1686"
         }
       ]
     },
     "required_hops": 2,
-    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "graph_path": "ThreatGroup -USES-> Software -USES-> Technique",
     "source": "MITRE ATT&CK Enterprise v19.2"
   },
   {
     "id": "Q18",
-    "question": "Which mitigations address the ATT&CK technique ARP Cache Poisoning (T1557.002) used by Cleaver (G0003)?",
+    "category": "group_software_technique",
+    "question": "Which ATT&CK techniques does Derusbi (S0021), software used by Axiom (G0001), implement?",
     "expected_answer": {
       "threat_group": {
-        "name": "Cleaver",
-        "attack_id": "G0003"
+        "name": "Axiom",
+        "attack_id": "G0001"
       },
-      "technique": {
-        "name": "ARP Cache Poisoning",
-        "attack_id": "T1557.002"
+      "software": {
+        "name": "Derusbi",
+        "attack_id": "S0021"
       },
-      "mitigations": [
+      "techniques": [
         {
-          "name": "User Training",
-          "attack_id": "M1017"
+          "name": "Fallback Channels",
+          "attack_id": "T1008"
         },
         {
-          "name": "Network Intrusion Prevention",
-          "attack_id": "M1031"
+          "name": "Query Registry",
+          "attack_id": "T1012"
         },
         {
-          "name": "Limit Access to Resource Over Network",
-          "attack_id": "M1035"
+          "name": "System Owner/User Discovery",
+          "attack_id": "T1033"
         },
         {
-          "name": "Filter Network Traffic",
-          "attack_id": "M1037"
+          "name": "Dynamic-link Library Injection",
+          "attack_id": "T1055.001"
         },
         {
-          "name": "Encrypt Sensitive Information",
-          "attack_id": "M1041"
+          "name": "Keylogging",
+          "attack_id": "T1056.001"
         },
         {
-          "name": "Disable or Remove Feature or Program",
-          "attack_id": "M1042"
+          "name": "Process Discovery",
+          "attack_id": "T1057"
+        },
+        {
+          "name": "Unix Shell",
+          "attack_id": "T1059.004"
+        },
+        {
+          "name": "File Deletion",
+          "attack_id": "T1070.004"
+        },
+        {
+          "name": "Timestomp",
+          "attack_id": "T1070.006"
+        },
+        {
+          "name": "System Information Discovery",
+          "attack_id": "T1082"
+        },
+        {
+          "name": "File and Directory Discovery",
+          "attack_id": "T1083"
+        },
+        {
+          "name": "Non-Application Layer Protocol",
+          "attack_id": "T1095"
+        },
+        {
+          "name": "Screen Capture",
+          "attack_id": "T1113"
+        },
+        {
+          "name": "Audio Capture",
+          "attack_id": "T1123"
+        },
+        {
+          "name": "Video Capture",
+          "attack_id": "T1125"
+        },
+        {
+          "name": "Regsvr32",
+          "attack_id": "T1218.010"
+        },
+        {
+          "name": "Non-Standard Port",
+          "attack_id": "T1571"
+        },
+        {
+          "name": "Symmetric Cryptography",
+          "attack_id": "T1573.001"
         }
       ]
     },
     "required_hops": 2,
-    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "graph_path": "ThreatGroup -USES-> Software -USES-> Technique",
     "source": "MITRE ATT&CK Enterprise v19.2"
   },
   {
     "id": "Q19",
-    "question": "Which mitigations address the ATT&CK technique Social Media Accounts (T1585.001) used by Cleaver (G0003)?",
+    "category": "group_software_technique",
+    "question": "Which ATT&CK techniques does gh0st RAT (S0032), software used by Axiom (G0001), implement?",
     "expected_answer": {
       "threat_group": {
-        "name": "Cleaver",
-        "attack_id": "G0003"
+        "name": "Axiom",
+        "attack_id": "G0001"
       },
-      "technique": {
-        "name": "Social Media Accounts",
-        "attack_id": "T1585.001"
+      "software": {
+        "name": "gh0st RAT",
+        "attack_id": "S0032"
       },
-      "mitigations": [
+      "techniques": [
         {
-          "name": "Pre-compromise",
-          "attack_id": "M1056"
+          "name": "Query Registry",
+          "attack_id": "T1012"
+        },
+        {
+          "name": "Process Injection",
+          "attack_id": "T1055"
+        },
+        {
+          "name": "Keylogging",
+          "attack_id": "T1056.001"
+        },
+        {
+          "name": "Process Discovery",
+          "attack_id": "T1057"
+        },
+        {
+          "name": "Command and Scripting Interpreter",
+          "attack_id": "T1059"
+        },
+        {
+          "name": "File Deletion",
+          "attack_id": "T1070.004"
+        },
+        {
+          "name": "System Information Discovery",
+          "attack_id": "T1082"
+        },
+        {
+          "name": "Non-Application Layer Protocol",
+          "attack_id": "T1095"
+        },
+        {
+          "name": "Ingress Tool Transfer",
+          "attack_id": "T1105"
+        },
+        {
+          "name": "Native API",
+          "attack_id": "T1106"
+        },
+        {
+          "name": "Modify Registry",
+          "attack_id": "T1112"
+        },
+        {
+          "name": "Screen Capture",
+          "attack_id": "T1113"
+        },
+        {
+          "name": "Shared Modules",
+          "attack_id": "T1129"
+        },
+        {
+          "name": "Standard Encoding",
+          "attack_id": "T1132.001"
+        },
+        {
+          "name": "Deobfuscate/Decode Files or Information",
+          "attack_id": "T1140"
+        },
+        {
+          "name": "Rundll32",
+          "attack_id": "T1218.011"
+        },
+        {
+          "name": "Windows Service",
+          "attack_id": "T1543.003"
+        },
+        {
+          "name": "Registry Run Keys / Startup Folder",
+          "attack_id": "T1547.001"
+        },
+        {
+          "name": "Fast Flux DNS",
+          "attack_id": "T1568.001"
+        },
+        {
+          "name": "Service Execution",
+          "attack_id": "T1569.002"
+        },
+        {
+          "name": "Encrypted Channel",
+          "attack_id": "T1573"
+        },
+        {
+          "name": "Symmetric Cryptography",
+          "attack_id": "T1573.001"
+        },
+        {
+          "name": "DLL",
+          "attack_id": "T1574.001"
+        },
+        {
+          "name": "Clear Windows Event Logs",
+          "attack_id": "T1685.005"
         }
       ]
     },
     "required_hops": 2,
-    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "graph_path": "ThreatGroup -USES-> Software -USES-> Technique",
     "source": "MITRE ATT&CK Enterprise v19.2"
   },
   {
     "id": "Q20",
-    "question": "Which mitigations address the ATT&CK technique Malware (T1587.001) used by Cleaver (G0003)?",
+    "category": "group_software_technique",
+    "question": "Which ATT&CK techniques does Hydraq (S0203), software used by Axiom (G0001), implement?",
     "expected_answer": {
       "threat_group": {
-        "name": "Cleaver",
-        "attack_id": "G0003"
+        "name": "Axiom",
+        "attack_id": "G0001"
       },
-      "technique": {
-        "name": "Malware",
-        "attack_id": "T1587.001"
+      "software": {
+        "name": "Hydraq",
+        "attack_id": "S0203"
       },
-      "mitigations": [
+      "techniques": [
         {
-          "name": "Pre-compromise",
-          "attack_id": "M1056"
+          "name": "Data from Local System",
+          "attack_id": "T1005"
+        },
+        {
+          "name": "System Service Discovery",
+          "attack_id": "T1007"
+        },
+        {
+          "name": "Query Registry",
+          "attack_id": "T1012"
+        },
+        {
+          "name": "System Network Configuration Discovery",
+          "attack_id": "T1016"
+        },
+        {
+          "name": "Obfuscated Files or Information",
+          "attack_id": "T1027"
+        },
+        {
+          "name": "Exfiltration Over Alternative Protocol",
+          "attack_id": "T1048"
+        },
+        {
+          "name": "Process Discovery",
+          "attack_id": "T1057"
+        },
+        {
+          "name": "File Deletion",
+          "attack_id": "T1070.004"
+        },
+        {
+          "name": "System Information Discovery",
+          "attack_id": "T1082"
+        },
+        {
+          "name": "File and Directory Discovery",
+          "attack_id": "T1083"
+        },
+        {
+          "name": "Ingress Tool Transfer",
+          "attack_id": "T1105"
+        },
+        {
+          "name": "Modify Registry",
+          "attack_id": "T1112"
+        },
+        {
+          "name": "Screen Capture",
+          "attack_id": "T1113"
+        },
+        {
+          "name": "Shared Modules",
+          "attack_id": "T1129"
+        },
+        {
+          "name": "Access Token Manipulation",
+          "attack_id": "T1134"
+        },
+        {
+          "name": "Windows Service",
+          "attack_id": "T1543.003"
+        },
+        {
+          "name": "Service Execution",
+          "attack_id": "T1569.002"
+        },
+        {
+          "name": "Symmetric Cryptography",
+          "attack_id": "T1573.001"
+        },
+        {
+          "name": "Clear Windows Event Logs",
+          "attack_id": "T1685.005"
         }
       ]
     },
     "required_hops": 2,
-    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "graph_path": "ThreatGroup -USES-> Software -USES-> Technique",
     "source": "MITRE ATT&CK Enterprise v19.2"
   },
   {
     "id": "Q21",
-    "question": "Which mitigations address the ATT&CK technique Tool (T1588.002) used by Cleaver (G0003)?",
+    "category": "group_software_technique",
+    "question": "Which ATT&CK techniques does ZxShell (S0412), software used by Axiom (G0001), implement?",
     "expected_answer": {
       "threat_group": {
-        "name": "Cleaver",
-        "attack_id": "G0003"
+        "name": "Axiom",
+        "attack_id": "G0001"
       },
-      "technique": {
-        "name": "Tool",
-        "attack_id": "T1588.002"
+      "software": {
+        "name": "ZxShell",
+        "attack_id": "S0412"
       },
-      "mitigations": [
+      "techniques": [
         {
-          "name": "Pre-compromise",
-          "attack_id": "M1056"
+          "name": "Data from Local System",
+          "attack_id": "T1005"
+        },
+        {
+          "name": "System Service Discovery",
+          "attack_id": "T1007"
+        },
+        {
+          "name": "Query Registry",
+          "attack_id": "T1012"
+        },
+        {
+          "name": "Remote Desktop Protocol",
+          "attack_id": "T1021.001"
+        },
+        {
+          "name": "VNC",
+          "attack_id": "T1021.005"
+        },
+        {
+          "name": "System Owner/User Discovery",
+          "attack_id": "T1033"
+        },
+        {
+          "name": "Network Service Discovery",
+          "attack_id": "T1046"
+        },
+        {
+          "name": "Dynamic-link Library Injection",
+          "attack_id": "T1055.001"
+        },
+        {
+          "name": "Keylogging",
+          "attack_id": "T1056.001"
+        },
+        {
+          "name": "Credential API Hooking",
+          "attack_id": "T1056.004"
+        },
+        {
+          "name": "Process Discovery",
+          "attack_id": "T1057"
+        },
+        {
+          "name": "Windows Command Shell",
+          "attack_id": "T1059.003"
+        },
+        {
+          "name": "File Deletion",
+          "attack_id": "T1070.004"
+        },
+        {
+          "name": "Web Protocols",
+          "attack_id": "T1071.001"
+        },
+        {
+          "name": "File Transfer Protocols",
+          "attack_id": "T1071.002"
+        },
+        {
+          "name": "System Information Discovery",
+          "attack_id": "T1082"
+        },
+        {
+          "name": "File and Directory Discovery",
+          "attack_id": "T1083"
+        },
+        {
+          "name": "Proxy",
+          "attack_id": "T1090"
+        },
+        {
+          "name": "Ingress Tool Transfer",
+          "attack_id": "T1105"
+        },
+        {
+          "name": "Native API",
+          "attack_id": "T1106"
+        },
+        {
+          "name": "Modify Registry",
+          "attack_id": "T1112"
+        },
+        {
+          "name": "Screen Capture",
+          "attack_id": "T1113"
+        },
+        {
+          "name": "Video Capture",
+          "attack_id": "T1125"
+        },
+        {
+          "name": "Create Process with Token",
+          "attack_id": "T1134.002"
+        },
+        {
+          "name": "Local Account",
+          "attack_id": "T1136.001"
+        },
+        {
+          "name": "Exploit Public-Facing Application",
+          "attack_id": "T1190"
+        },
+        {
+          "name": "Rundll32",
+          "attack_id": "T1218.011"
+        },
+        {
+          "name": "Endpoint Denial of Service",
+          "attack_id": "T1499"
+        },
+        {
+          "name": "Windows Service",
+          "attack_id": "T1543.003"
+        },
+        {
+          "name": "Service Execution",
+          "attack_id": "T1569.002"
+        },
+        {
+          "name": "Non-Standard Port",
+          "attack_id": "T1571"
+        },
+        {
+          "name": "Disable or Modify Tools",
+          "attack_id": "T1685"
+        },
+        {
+          "name": "Clear Windows Event Logs",
+          "attack_id": "T1685.005"
+        },
+        {
+          "name": "Disable or Modify System Firewall",
+          "attack_id": "T1686"
         }
       ]
     },
     "required_hops": 2,
-    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "graph_path": "ThreatGroup -USES-> Software -USES-> Technique",
     "source": "MITRE ATT&CK Enterprise v19.2"
   },
   {
     "id": "Q22",
-    "question": "Which mitigations address the ATT&CK technique LSASS Memory (T1003.001) used by Ke3chang (G0004)?",
+    "category": "group_software_technique",
+    "question": "Which ATT&CK techniques does Zox (S0672), software used by Axiom (G0001), implement?",
     "expected_answer": {
       "threat_group": {
-        "name": "Ke3chang",
-        "attack_id": "G0004"
+        "name": "Axiom",
+        "attack_id": "G0001"
       },
-      "technique": {
-        "name": "LSASS Memory",
-        "attack_id": "T1003.001"
+      "software": {
+        "name": "Zox",
+        "attack_id": "S0672"
       },
-      "mitigations": [
+      "techniques": [
         {
-          "name": "User Training",
-          "attack_id": "M1017"
+          "name": "Steganography",
+          "attack_id": "T1001.002"
         },
         {
-          "name": "Privileged Process Integrity",
-          "attack_id": "M1025"
+          "name": "Data from Local System",
+          "attack_id": "T1005"
         },
         {
-          "name": "Privileged Account Management",
-          "attack_id": "M1026"
+          "name": "SMB/Windows Admin Shares",
+          "attack_id": "T1021.002"
         },
         {
-          "name": "Password Policies",
-          "attack_id": "M1027"
+          "name": "Encrypted/Encoded File",
+          "attack_id": "T1027.013"
         },
         {
-          "name": "Operating System Configuration",
-          "attack_id": "M1028"
+          "name": "Process Discovery",
+          "attack_id": "T1057"
         },
         {
-          "name": "Behavior Prevention on Endpoint",
-          "attack_id": "M1040"
+          "name": "Exploitation for Privilege Escalation",
+          "attack_id": "T1068"
         },
         {
-          "name": "Credential Access Protection",
-          "attack_id": "M1043"
+          "name": "File and Directory Discovery",
+          "attack_id": "T1083"
+        },
+        {
+          "name": "Ingress Tool Transfer",
+          "attack_id": "T1105"
+        },
+        {
+          "name": "Local Storage Discovery",
+          "attack_id": "T1680"
         }
       ]
     },
     "required_hops": 2,
-    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "graph_path": "ThreatGroup -USES-> Software -USES-> Technique",
     "source": "MITRE ATT&CK Enterprise v19.2"
   },
   {
     "id": "Q23",
-    "question": "Which mitigations address the ATT&CK technique Security Account Manager (T1003.002) used by Ke3chang (G0004)?",
+    "category": "group_software_technique_mitigation",
+    "question": "For Hikit (S0009), software used by Axiom (G0001), which mitigations address each ATT&CK technique it implements?",
     "expected_answer": {
       "threat_group": {
-        "name": "Ke3chang",
-        "attack_id": "G0004"
+        "name": "Axiom",
+        "attack_id": "G0001"
       },
-      "technique": {
-        "name": "Security Account Manager",
-        "attack_id": "T1003.002"
+      "software": {
+        "name": "Hikit",
+        "attack_id": "S0009"
       },
-      "mitigations": [
+      "techniques_and_mitigations": [
         {
-          "name": "User Training",
-          "attack_id": "M1017"
+          "technique": {
+            "name": "Data from Local System",
+            "attack_id": "T1005"
+          },
+          "mitigations": [
+            {
+              "name": "Data Loss Prevention",
+              "attack_id": "M1057"
+            }
+          ]
         },
         {
-          "name": "Privileged Account Management",
-          "attack_id": "M1026"
+          "technique": {
+            "name": "Windows Command Shell",
+            "attack_id": "T1059.003"
+          },
+          "mitigations": [
+            {
+              "name": "Execution Prevention",
+              "attack_id": "M1038"
+            }
+          ]
         },
         {
-          "name": "Password Policies",
-          "attack_id": "M1027"
+          "technique": {
+            "name": "Web Protocols",
+            "attack_id": "T1071.001"
+          },
+          "mitigations": [
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            },
+            {
+              "name": "Filter Network Traffic",
+              "attack_id": "M1037"
+            }
+          ]
         },
         {
-          "name": "Operating System Configuration",
-          "attack_id": "M1028"
+          "technique": {
+            "name": "Internal Proxy",
+            "attack_id": "T1090.001"
+          },
+          "mitigations": [
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Ingress Tool Transfer",
+            "attack_id": "T1105"
+          },
+          "mitigations": [
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            },
+            {
+              "name": "Filter Network Traffic",
+              "attack_id": "M1037"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Install Root Certificate",
+            "attack_id": "T1553.004"
+          },
+          "mitigations": [
+            {
+              "name": "Operating System Configuration",
+              "attack_id": "M1028"
+            },
+            {
+              "name": "Software Configuration",
+              "attack_id": "M1054"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Code Signing Policy Modification",
+            "attack_id": "T1553.006"
+          },
+          "mitigations": [
+            {
+              "name": "Restrict Registry Permissions",
+              "attack_id": "M1024"
+            },
+            {
+              "name": "Privileged Account Management",
+              "attack_id": "M1026"
+            },
+            {
+              "name": "Boot Integrity",
+              "attack_id": "M1046"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Phishing",
+            "attack_id": "T1566"
+          },
+          "mitigations": [
+            {
+              "name": "User Training",
+              "attack_id": "M1017"
+            },
+            {
+              "name": "Restrict Web-Based Content",
+              "attack_id": "M1021"
+            },
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            },
+            {
+              "name": "Audit",
+              "attack_id": "M1047"
+            },
+            {
+              "name": "Antivirus/Antimalware",
+              "attack_id": "M1049"
+            },
+            {
+              "name": "Software Configuration",
+              "attack_id": "M1054"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Symmetric Cryptography",
+            "attack_id": "T1573.001"
+          },
+          "mitigations": [
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "DLL",
+            "attack_id": "T1574.001"
+          },
+          "mitigations": [
+            {
+              "name": "Application Developer Guidance",
+              "attack_id": "M1013"
+            },
+            {
+              "name": "Execution Prevention",
+              "attack_id": "M1038"
+            },
+            {
+              "name": "Restrict Library Loading",
+              "attack_id": "M1044"
+            },
+            {
+              "name": "Audit",
+              "attack_id": "M1047"
+            },
+            {
+              "name": "Update Software",
+              "attack_id": "M1051"
+            }
+          ]
         }
       ]
     },
-    "required_hops": 2,
-    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "required_hops": 3,
+    "graph_path": "ThreatGroup -USES-> Software -USES-> Technique <-MITIGATES- Mitigation",
     "source": "MITRE ATT&CK Enterprise v19.2"
   },
   {
     "id": "Q24",
-    "question": "Which mitigations address the ATT&CK technique NTDS (T1003.003) used by Ke3chang (G0004)?",
+    "category": "group_software_technique_mitigation",
+    "question": "For PoisonIvy (S0012), software used by Axiom (G0001), which mitigations address each ATT&CK technique it implements?",
     "expected_answer": {
       "threat_group": {
-        "name": "Ke3chang",
-        "attack_id": "G0004"
+        "name": "Axiom",
+        "attack_id": "G0001"
       },
-      "technique": {
-        "name": "NTDS",
-        "attack_id": "T1003.003"
+      "software": {
+        "name": "PoisonIvy",
+        "attack_id": "S0012"
       },
-      "mitigations": [
+      "techniques_and_mitigations": [
         {
-          "name": "User Training",
-          "attack_id": "M1017"
+          "technique": {
+            "name": "Data from Local System",
+            "attack_id": "T1005"
+          },
+          "mitigations": [
+            {
+              "name": "Data Loss Prevention",
+              "attack_id": "M1057"
+            }
+          ]
         },
         {
-          "name": "Privileged Account Management",
-          "attack_id": "M1026"
+          "technique": {
+            "name": "Obfuscated Files or Information",
+            "attack_id": "T1027"
+          },
+          "mitigations": [
+            {
+              "name": "User Training",
+              "attack_id": "M1017"
+            },
+            {
+              "name": "Behavior Prevention on Endpoint",
+              "attack_id": "M1040"
+            },
+            {
+              "name": "Audit",
+              "attack_id": "M1047"
+            },
+            {
+              "name": "Antivirus/Antimalware",
+              "attack_id": "M1049"
+            }
+          ]
         },
         {
-          "name": "Password Policies",
-          "attack_id": "M1027"
+          "technique": {
+            "name": "Dynamic-link Library Injection",
+            "attack_id": "T1055.001"
+          },
+          "mitigations": [
+            {
+              "name": "Behavior Prevention on Endpoint",
+              "attack_id": "M1040"
+            }
+          ]
         },
         {
-          "name": "Encrypt Sensitive Information",
-          "attack_id": "M1041"
+          "technique": {
+            "name": "Windows Command Shell",
+            "attack_id": "T1059.003"
+          },
+          "mitigations": [
+            {
+              "name": "Execution Prevention",
+              "attack_id": "M1038"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Ingress Tool Transfer",
+            "attack_id": "T1105"
+          },
+          "mitigations": [
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            },
+            {
+              "name": "Filter Network Traffic",
+              "attack_id": "M1037"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Modify Registry",
+            "attack_id": "T1112"
+          },
+          "mitigations": [
+            {
+              "name": "Restrict Registry Permissions",
+              "attack_id": "M1024"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Mutual Exclusion",
+            "attack_id": "T1480.002"
+          },
+          "mitigations": [
+            {
+              "name": "Do Not Mitigate",
+              "attack_id": "M1055"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Windows Service",
+            "attack_id": "T1543.003"
+          },
+          "mitigations": [
+            {
+              "name": "User Account Management",
+              "attack_id": "M1018"
+            },
+            {
+              "name": "Operating System Configuration",
+              "attack_id": "M1028"
+            },
+            {
+              "name": "Behavior Prevention on Endpoint",
+              "attack_id": "M1040"
+            },
+            {
+              "name": "Code Signing",
+              "attack_id": "M1045"
+            },
+            {
+              "name": "Audit",
+              "attack_id": "M1047"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Symmetric Cryptography",
+            "attack_id": "T1573.001"
+          },
+          "mitigations": [
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            }
+          ]
         }
       ]
     },
-    "required_hops": 2,
-    "graph_path": "ThreatGroup -USES-> Technique <-MITIGATES- Mitigation",
+    "required_hops": 3,
+    "graph_path": "ThreatGroup -USES-> Software -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q25",
+    "category": "group_software_technique_mitigation",
+    "question": "For PlugX (S0013), software used by Axiom (G0001), which mitigations address each ATT&CK technique it implements?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Axiom",
+        "attack_id": "G0001"
+      },
+      "software": {
+        "name": "PlugX",
+        "attack_id": "S0013"
+      },
+      "techniques_and_mitigations": [
+        {
+          "technique": {
+            "name": "Obfuscated Files or Information",
+            "attack_id": "T1027"
+          },
+          "mitigations": [
+            {
+              "name": "User Training",
+              "attack_id": "M1017"
+            },
+            {
+              "name": "Behavior Prevention on Endpoint",
+              "attack_id": "M1040"
+            },
+            {
+              "name": "Audit",
+              "attack_id": "M1047"
+            },
+            {
+              "name": "Antivirus/Antimalware",
+              "attack_id": "M1049"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Encrypted/Encoded File",
+            "attack_id": "T1027.013"
+          },
+          "mitigations": [
+            {
+              "name": "Behavior Prevention on Endpoint",
+              "attack_id": "M1040"
+            },
+            {
+              "name": "Antivirus/Antimalware",
+              "attack_id": "M1049"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Match Legitimate Resource Name or Location",
+            "attack_id": "T1036.005"
+          },
+          "mitigations": [
+            {
+              "name": "Restrict File and Directory Permissions",
+              "attack_id": "M1022"
+            },
+            {
+              "name": "Execution Prevention",
+              "attack_id": "M1038"
+            },
+            {
+              "name": "Code Signing",
+              "attack_id": "M1045"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Exfiltration Over C2 Channel",
+            "attack_id": "T1041"
+          },
+          "mitigations": [
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            },
+            {
+              "name": "Data Loss Prevention",
+              "attack_id": "M1057"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Scheduled Task",
+            "attack_id": "T1053.005"
+          },
+          "mitigations": [
+            {
+              "name": "User Account Management",
+              "attack_id": "M1018"
+            },
+            {
+              "name": "Privileged Account Management",
+              "attack_id": "M1026"
+            },
+            {
+              "name": "Operating System Configuration",
+              "attack_id": "M1028"
+            },
+            {
+              "name": "Audit",
+              "attack_id": "M1047"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Windows Command Shell",
+            "attack_id": "T1059.003"
+          },
+          "mitigations": [
+            {
+              "name": "Execution Prevention",
+              "attack_id": "M1038"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Clear Persistence",
+            "attack_id": "T1070.009"
+          },
+          "mitigations": [
+            {
+              "name": "Restrict File and Directory Permissions",
+              "attack_id": "M1022"
+            },
+            {
+              "name": "Remote Data Storage",
+              "attack_id": "M1029"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Web Protocols",
+            "attack_id": "T1071.001"
+          },
+          "mitigations": [
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            },
+            {
+              "name": "Filter Network Traffic",
+              "attack_id": "M1037"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "DNS",
+            "attack_id": "T1071.004"
+          },
+          "mitigations": [
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            },
+            {
+              "name": "Filter Network Traffic",
+              "attack_id": "M1037"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Replication Through Removable Media",
+            "attack_id": "T1091"
+          },
+          "mitigations": [
+            {
+              "name": "Limit Hardware Installation",
+              "attack_id": "M1034"
+            },
+            {
+              "name": "Behavior Prevention on Endpoint",
+              "attack_id": "M1040"
+            },
+            {
+              "name": "Disable or Remove Feature or Program",
+              "attack_id": "M1042"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Non-Application Layer Protocol",
+            "attack_id": "T1095"
+          },
+          "mitigations": [
+            {
+              "name": "Network Segmentation",
+              "attack_id": "M1030"
+            },
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            },
+            {
+              "name": "Filter Network Traffic",
+              "attack_id": "M1037"
+            },
+            {
+              "name": "Audit",
+              "attack_id": "M1047"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Dead Drop Resolver",
+            "attack_id": "T1102.001"
+          },
+          "mitigations": [
+            {
+              "name": "Restrict Web-Based Content",
+              "attack_id": "M1021"
+            },
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Ingress Tool Transfer",
+            "attack_id": "T1105"
+          },
+          "mitigations": [
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            },
+            {
+              "name": "Filter Network Traffic",
+              "attack_id": "M1037"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Native API",
+            "attack_id": "T1106"
+          },
+          "mitigations": [
+            {
+              "name": "Execution Prevention",
+              "attack_id": "M1038"
+            },
+            {
+              "name": "Behavior Prevention on Endpoint",
+              "attack_id": "M1040"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Modify Registry",
+            "attack_id": "T1112"
+          },
+          "mitigations": [
+            {
+              "name": "Restrict Registry Permissions",
+              "attack_id": "M1024"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "MSBuild",
+            "attack_id": "T1127.001"
+          },
+          "mitigations": [
+            {
+              "name": "Execution Prevention",
+              "attack_id": "M1038"
+            },
+            {
+              "name": "Disable or Remove Feature or Program",
+              "attack_id": "M1042"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Network Share Discovery",
+            "attack_id": "T1135"
+          },
+          "mitigations": [
+            {
+              "name": "Operating System Configuration",
+              "attack_id": "M1028"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Malicious File",
+            "attack_id": "T1204.002"
+          },
+          "mitigations": [
+            {
+              "name": "User Training",
+              "attack_id": "M1017"
+            },
+            {
+              "name": "Execution Prevention",
+              "attack_id": "M1038"
+            },
+            {
+              "name": "Behavior Prevention on Endpoint",
+              "attack_id": "M1040"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Mutual Exclusion",
+            "attack_id": "T1480.002"
+          },
+          "mitigations": [
+            {
+              "name": "Do Not Mitigate",
+              "attack_id": "M1055"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Windows Service",
+            "attack_id": "T1543.003"
+          },
+          "mitigations": [
+            {
+              "name": "User Account Management",
+              "attack_id": "M1018"
+            },
+            {
+              "name": "Operating System Configuration",
+              "attack_id": "M1028"
+            },
+            {
+              "name": "Behavior Prevention on Endpoint",
+              "attack_id": "M1040"
+            },
+            {
+              "name": "Code Signing",
+              "attack_id": "M1045"
+            },
+            {
+              "name": "Audit",
+              "attack_id": "M1047"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Hidden Window",
+            "attack_id": "T1564.003"
+          },
+          "mitigations": [
+            {
+              "name": "Limit Software Installation",
+              "attack_id": "M1033"
+            },
+            {
+              "name": "Execution Prevention",
+              "attack_id": "M1038"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Non-Standard Port",
+            "attack_id": "T1571"
+          },
+          "mitigations": [
+            {
+              "name": "Network Segmentation",
+              "attack_id": "M1030"
+            },
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Symmetric Cryptography",
+            "attack_id": "T1573.001"
+          },
+          "mitigations": [
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "DLL",
+            "attack_id": "T1574.001"
+          },
+          "mitigations": [
+            {
+              "name": "Application Developer Guidance",
+              "attack_id": "M1013"
+            },
+            {
+              "name": "Execution Prevention",
+              "attack_id": "M1038"
+            },
+            {
+              "name": "Restrict Library Loading",
+              "attack_id": "M1044"
+            },
+            {
+              "name": "Audit",
+              "attack_id": "M1047"
+            },
+            {
+              "name": "Update Software",
+              "attack_id": "M1051"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Disable or Modify System Firewall",
+            "attack_id": "T1686"
+          },
+          "mitigations": [
+            {
+              "name": "User Account Management",
+              "attack_id": "M1018"
+            },
+            {
+              "name": "Restrict File and Directory Permissions",
+              "attack_id": "M1022"
+            },
+            {
+              "name": "Restrict Registry Permissions",
+              "attack_id": "M1024"
+            },
+            {
+              "name": "Audit",
+              "attack_id": "M1047"
+            }
+          ]
+        }
+      ]
+    },
+    "required_hops": 3,
+    "graph_path": "ThreatGroup -USES-> Software -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q26",
+    "category": "group_software_technique_mitigation",
+    "question": "For Derusbi (S0021), software used by Axiom (G0001), which mitigations address each ATT&CK technique it implements?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Axiom",
+        "attack_id": "G0001"
+      },
+      "software": {
+        "name": "Derusbi",
+        "attack_id": "S0021"
+      },
+      "techniques_and_mitigations": [
+        {
+          "technique": {
+            "name": "Fallback Channels",
+            "attack_id": "T1008"
+          },
+          "mitigations": [
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Dynamic-link Library Injection",
+            "attack_id": "T1055.001"
+          },
+          "mitigations": [
+            {
+              "name": "Behavior Prevention on Endpoint",
+              "attack_id": "M1040"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Unix Shell",
+            "attack_id": "T1059.004"
+          },
+          "mitigations": [
+            {
+              "name": "Execution Prevention",
+              "attack_id": "M1038"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Non-Application Layer Protocol",
+            "attack_id": "T1095"
+          },
+          "mitigations": [
+            {
+              "name": "Network Segmentation",
+              "attack_id": "M1030"
+            },
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            },
+            {
+              "name": "Filter Network Traffic",
+              "attack_id": "M1037"
+            },
+            {
+              "name": "Audit",
+              "attack_id": "M1047"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Regsvr32",
+            "attack_id": "T1218.010"
+          },
+          "mitigations": [
+            {
+              "name": "Exploit Protection",
+              "attack_id": "M1050"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Non-Standard Port",
+            "attack_id": "T1571"
+          },
+          "mitigations": [
+            {
+              "name": "Network Segmentation",
+              "attack_id": "M1030"
+            },
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Symmetric Cryptography",
+            "attack_id": "T1573.001"
+          },
+          "mitigations": [
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            }
+          ]
+        }
+      ]
+    },
+    "required_hops": 3,
+    "graph_path": "ThreatGroup -USES-> Software -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q27",
+    "category": "group_software_technique_mitigation",
+    "question": "For gh0st RAT (S0032), software used by Axiom (G0001), which mitigations address each ATT&CK technique it implements?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Axiom",
+        "attack_id": "G0001"
+      },
+      "software": {
+        "name": "gh0st RAT",
+        "attack_id": "S0032"
+      },
+      "techniques_and_mitigations": [
+        {
+          "technique": {
+            "name": "Process Injection",
+            "attack_id": "T1055"
+          },
+          "mitigations": [
+            {
+              "name": "Privileged Account Management",
+              "attack_id": "M1026"
+            },
+            {
+              "name": "Behavior Prevention on Endpoint",
+              "attack_id": "M1040"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Command and Scripting Interpreter",
+            "attack_id": "T1059"
+          },
+          "mitigations": [
+            {
+              "name": "Restrict Web-Based Content",
+              "attack_id": "M1021"
+            },
+            {
+              "name": "Privileged Account Management",
+              "attack_id": "M1026"
+            },
+            {
+              "name": "Limit Software Installation",
+              "attack_id": "M1033"
+            },
+            {
+              "name": "Execution Prevention",
+              "attack_id": "M1038"
+            },
+            {
+              "name": "Behavior Prevention on Endpoint",
+              "attack_id": "M1040"
+            },
+            {
+              "name": "Disable or Remove Feature or Program",
+              "attack_id": "M1042"
+            },
+            {
+              "name": "Code Signing",
+              "attack_id": "M1045"
+            },
+            {
+              "name": "Audit",
+              "attack_id": "M1047"
+            },
+            {
+              "name": "Antivirus/Antimalware",
+              "attack_id": "M1049"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Non-Application Layer Protocol",
+            "attack_id": "T1095"
+          },
+          "mitigations": [
+            {
+              "name": "Network Segmentation",
+              "attack_id": "M1030"
+            },
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            },
+            {
+              "name": "Filter Network Traffic",
+              "attack_id": "M1037"
+            },
+            {
+              "name": "Audit",
+              "attack_id": "M1047"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Ingress Tool Transfer",
+            "attack_id": "T1105"
+          },
+          "mitigations": [
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            },
+            {
+              "name": "Filter Network Traffic",
+              "attack_id": "M1037"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Native API",
+            "attack_id": "T1106"
+          },
+          "mitigations": [
+            {
+              "name": "Execution Prevention",
+              "attack_id": "M1038"
+            },
+            {
+              "name": "Behavior Prevention on Endpoint",
+              "attack_id": "M1040"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Modify Registry",
+            "attack_id": "T1112"
+          },
+          "mitigations": [
+            {
+              "name": "Restrict Registry Permissions",
+              "attack_id": "M1024"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Shared Modules",
+            "attack_id": "T1129"
+          },
+          "mitigations": [
+            {
+              "name": "Execution Prevention",
+              "attack_id": "M1038"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Standard Encoding",
+            "attack_id": "T1132.001"
+          },
+          "mitigations": [
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Rundll32",
+            "attack_id": "T1218.011"
+          },
+          "mitigations": [
+            {
+              "name": "Exploit Protection",
+              "attack_id": "M1050"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Windows Service",
+            "attack_id": "T1543.003"
+          },
+          "mitigations": [
+            {
+              "name": "User Account Management",
+              "attack_id": "M1018"
+            },
+            {
+              "name": "Operating System Configuration",
+              "attack_id": "M1028"
+            },
+            {
+              "name": "Behavior Prevention on Endpoint",
+              "attack_id": "M1040"
+            },
+            {
+              "name": "Code Signing",
+              "attack_id": "M1045"
+            },
+            {
+              "name": "Audit",
+              "attack_id": "M1047"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Service Execution",
+            "attack_id": "T1569.002"
+          },
+          "mitigations": [
+            {
+              "name": "Restrict File and Directory Permissions",
+              "attack_id": "M1022"
+            },
+            {
+              "name": "Privileged Account Management",
+              "attack_id": "M1026"
+            },
+            {
+              "name": "Behavior Prevention on Endpoint",
+              "attack_id": "M1040"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Encrypted Channel",
+            "attack_id": "T1573"
+          },
+          "mitigations": [
+            {
+              "name": "SSL/TLS Inspection",
+              "attack_id": "M1020"
+            },
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Symmetric Cryptography",
+            "attack_id": "T1573.001"
+          },
+          "mitigations": [
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "DLL",
+            "attack_id": "T1574.001"
+          },
+          "mitigations": [
+            {
+              "name": "Application Developer Guidance",
+              "attack_id": "M1013"
+            },
+            {
+              "name": "Execution Prevention",
+              "attack_id": "M1038"
+            },
+            {
+              "name": "Restrict Library Loading",
+              "attack_id": "M1044"
+            },
+            {
+              "name": "Audit",
+              "attack_id": "M1047"
+            },
+            {
+              "name": "Update Software",
+              "attack_id": "M1051"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Clear Windows Event Logs",
+            "attack_id": "T1685.005"
+          },
+          "mitigations": [
+            {
+              "name": "Restrict File and Directory Permissions",
+              "attack_id": "M1022"
+            },
+            {
+              "name": "Remote Data Storage",
+              "attack_id": "M1029"
+            },
+            {
+              "name": "Encrypt Sensitive Information",
+              "attack_id": "M1041"
+            }
+          ]
+        }
+      ]
+    },
+    "required_hops": 3,
+    "graph_path": "ThreatGroup -USES-> Software -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q28",
+    "category": "group_software_technique_mitigation",
+    "question": "For Hydraq (S0203), software used by Axiom (G0001), which mitigations address each ATT&CK technique it implements?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Axiom",
+        "attack_id": "G0001"
+      },
+      "software": {
+        "name": "Hydraq",
+        "attack_id": "S0203"
+      },
+      "techniques_and_mitigations": [
+        {
+          "technique": {
+            "name": "Data from Local System",
+            "attack_id": "T1005"
+          },
+          "mitigations": [
+            {
+              "name": "Data Loss Prevention",
+              "attack_id": "M1057"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Obfuscated Files or Information",
+            "attack_id": "T1027"
+          },
+          "mitigations": [
+            {
+              "name": "User Training",
+              "attack_id": "M1017"
+            },
+            {
+              "name": "Behavior Prevention on Endpoint",
+              "attack_id": "M1040"
+            },
+            {
+              "name": "Audit",
+              "attack_id": "M1047"
+            },
+            {
+              "name": "Antivirus/Antimalware",
+              "attack_id": "M1049"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Exfiltration Over Alternative Protocol",
+            "attack_id": "T1048"
+          },
+          "mitigations": [
+            {
+              "name": "User Account Management",
+              "attack_id": "M1018"
+            },
+            {
+              "name": "Restrict File and Directory Permissions",
+              "attack_id": "M1022"
+            },
+            {
+              "name": "Network Segmentation",
+              "attack_id": "M1030"
+            },
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            },
+            {
+              "name": "Filter Network Traffic",
+              "attack_id": "M1037"
+            },
+            {
+              "name": "Data Loss Prevention",
+              "attack_id": "M1057"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Ingress Tool Transfer",
+            "attack_id": "T1105"
+          },
+          "mitigations": [
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            },
+            {
+              "name": "Filter Network Traffic",
+              "attack_id": "M1037"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Modify Registry",
+            "attack_id": "T1112"
+          },
+          "mitigations": [
+            {
+              "name": "Restrict Registry Permissions",
+              "attack_id": "M1024"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Shared Modules",
+            "attack_id": "T1129"
+          },
+          "mitigations": [
+            {
+              "name": "Execution Prevention",
+              "attack_id": "M1038"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Access Token Manipulation",
+            "attack_id": "T1134"
+          },
+          "mitigations": [
+            {
+              "name": "User Account Management",
+              "attack_id": "M1018"
+            },
+            {
+              "name": "Privileged Account Management",
+              "attack_id": "M1026"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Windows Service",
+            "attack_id": "T1543.003"
+          },
+          "mitigations": [
+            {
+              "name": "User Account Management",
+              "attack_id": "M1018"
+            },
+            {
+              "name": "Operating System Configuration",
+              "attack_id": "M1028"
+            },
+            {
+              "name": "Behavior Prevention on Endpoint",
+              "attack_id": "M1040"
+            },
+            {
+              "name": "Code Signing",
+              "attack_id": "M1045"
+            },
+            {
+              "name": "Audit",
+              "attack_id": "M1047"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Service Execution",
+            "attack_id": "T1569.002"
+          },
+          "mitigations": [
+            {
+              "name": "Restrict File and Directory Permissions",
+              "attack_id": "M1022"
+            },
+            {
+              "name": "Privileged Account Management",
+              "attack_id": "M1026"
+            },
+            {
+              "name": "Behavior Prevention on Endpoint",
+              "attack_id": "M1040"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Symmetric Cryptography",
+            "attack_id": "T1573.001"
+          },
+          "mitigations": [
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Clear Windows Event Logs",
+            "attack_id": "T1685.005"
+          },
+          "mitigations": [
+            {
+              "name": "Restrict File and Directory Permissions",
+              "attack_id": "M1022"
+            },
+            {
+              "name": "Remote Data Storage",
+              "attack_id": "M1029"
+            },
+            {
+              "name": "Encrypt Sensitive Information",
+              "attack_id": "M1041"
+            }
+          ]
+        }
+      ]
+    },
+    "required_hops": 3,
+    "graph_path": "ThreatGroup -USES-> Software -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q29",
+    "category": "group_software_technique_mitigation",
+    "question": "For ZxShell (S0412), software used by Axiom (G0001), which mitigations address each ATT&CK technique it implements?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Axiom",
+        "attack_id": "G0001"
+      },
+      "software": {
+        "name": "ZxShell",
+        "attack_id": "S0412"
+      },
+      "techniques_and_mitigations": [
+        {
+          "technique": {
+            "name": "Data from Local System",
+            "attack_id": "T1005"
+          },
+          "mitigations": [
+            {
+              "name": "Data Loss Prevention",
+              "attack_id": "M1057"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Remote Desktop Protocol",
+            "attack_id": "T1021.001"
+          },
+          "mitigations": [
+            {
+              "name": "User Account Management",
+              "attack_id": "M1018"
+            },
+            {
+              "name": "Privileged Account Management",
+              "attack_id": "M1026"
+            },
+            {
+              "name": "Operating System Configuration",
+              "attack_id": "M1028"
+            },
+            {
+              "name": "Network Segmentation",
+              "attack_id": "M1030"
+            },
+            {
+              "name": "Multi-factor Authentication",
+              "attack_id": "M1032"
+            },
+            {
+              "name": "Limit Access to Resource Over Network",
+              "attack_id": "M1035"
+            },
+            {
+              "name": "Disable or Remove Feature or Program",
+              "attack_id": "M1042"
+            },
+            {
+              "name": "Audit",
+              "attack_id": "M1047"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "VNC",
+            "attack_id": "T1021.005"
+          },
+          "mitigations": [
+            {
+              "name": "Limit Software Installation",
+              "attack_id": "M1033"
+            },
+            {
+              "name": "Filter Network Traffic",
+              "attack_id": "M1037"
+            },
+            {
+              "name": "Disable or Remove Feature or Program",
+              "attack_id": "M1042"
+            },
+            {
+              "name": "Audit",
+              "attack_id": "M1047"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Network Service Discovery",
+            "attack_id": "T1046"
+          },
+          "mitigations": [
+            {
+              "name": "Network Segmentation",
+              "attack_id": "M1030"
+            },
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            },
+            {
+              "name": "Disable or Remove Feature or Program",
+              "attack_id": "M1042"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Dynamic-link Library Injection",
+            "attack_id": "T1055.001"
+          },
+          "mitigations": [
+            {
+              "name": "Behavior Prevention on Endpoint",
+              "attack_id": "M1040"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Windows Command Shell",
+            "attack_id": "T1059.003"
+          },
+          "mitigations": [
+            {
+              "name": "Execution Prevention",
+              "attack_id": "M1038"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Web Protocols",
+            "attack_id": "T1071.001"
+          },
+          "mitigations": [
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            },
+            {
+              "name": "Filter Network Traffic",
+              "attack_id": "M1037"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "File Transfer Protocols",
+            "attack_id": "T1071.002"
+          },
+          "mitigations": [
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            },
+            {
+              "name": "Filter Network Traffic",
+              "attack_id": "M1037"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Proxy",
+            "attack_id": "T1090"
+          },
+          "mitigations": [
+            {
+              "name": "SSL/TLS Inspection",
+              "attack_id": "M1020"
+            },
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            },
+            {
+              "name": "Filter Network Traffic",
+              "attack_id": "M1037"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Ingress Tool Transfer",
+            "attack_id": "T1105"
+          },
+          "mitigations": [
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            },
+            {
+              "name": "Filter Network Traffic",
+              "attack_id": "M1037"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Native API",
+            "attack_id": "T1106"
+          },
+          "mitigations": [
+            {
+              "name": "Execution Prevention",
+              "attack_id": "M1038"
+            },
+            {
+              "name": "Behavior Prevention on Endpoint",
+              "attack_id": "M1040"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Modify Registry",
+            "attack_id": "T1112"
+          },
+          "mitigations": [
+            {
+              "name": "Restrict Registry Permissions",
+              "attack_id": "M1024"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Create Process with Token",
+            "attack_id": "T1134.002"
+          },
+          "mitigations": [
+            {
+              "name": "User Account Management",
+              "attack_id": "M1018"
+            },
+            {
+              "name": "Privileged Account Management",
+              "attack_id": "M1026"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Local Account",
+            "attack_id": "T1136.001"
+          },
+          "mitigations": [
+            {
+              "name": "Privileged Account Management",
+              "attack_id": "M1026"
+            },
+            {
+              "name": "Multi-factor Authentication",
+              "attack_id": "M1032"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Exploit Public-Facing Application",
+            "attack_id": "T1190"
+          },
+          "mitigations": [
+            {
+              "name": "Vulnerability Scanning",
+              "attack_id": "M1016"
+            },
+            {
+              "name": "Privileged Account Management",
+              "attack_id": "M1026"
+            },
+            {
+              "name": "Network Segmentation",
+              "attack_id": "M1030"
+            },
+            {
+              "name": "Limit Access to Resource Over Network",
+              "attack_id": "M1035"
+            },
+            {
+              "name": "Filter Network Traffic",
+              "attack_id": "M1037"
+            },
+            {
+              "name": "Application Isolation and Sandboxing",
+              "attack_id": "M1048"
+            },
+            {
+              "name": "Exploit Protection",
+              "attack_id": "M1050"
+            },
+            {
+              "name": "Update Software",
+              "attack_id": "M1051"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Rundll32",
+            "attack_id": "T1218.011"
+          },
+          "mitigations": [
+            {
+              "name": "Exploit Protection",
+              "attack_id": "M1050"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Endpoint Denial of Service",
+            "attack_id": "T1499"
+          },
+          "mitigations": [
+            {
+              "name": "Filter Network Traffic",
+              "attack_id": "M1037"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Windows Service",
+            "attack_id": "T1543.003"
+          },
+          "mitigations": [
+            {
+              "name": "User Account Management",
+              "attack_id": "M1018"
+            },
+            {
+              "name": "Operating System Configuration",
+              "attack_id": "M1028"
+            },
+            {
+              "name": "Behavior Prevention on Endpoint",
+              "attack_id": "M1040"
+            },
+            {
+              "name": "Code Signing",
+              "attack_id": "M1045"
+            },
+            {
+              "name": "Audit",
+              "attack_id": "M1047"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Service Execution",
+            "attack_id": "T1569.002"
+          },
+          "mitigations": [
+            {
+              "name": "Restrict File and Directory Permissions",
+              "attack_id": "M1022"
+            },
+            {
+              "name": "Privileged Account Management",
+              "attack_id": "M1026"
+            },
+            {
+              "name": "Behavior Prevention on Endpoint",
+              "attack_id": "M1040"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Non-Standard Port",
+            "attack_id": "T1571"
+          },
+          "mitigations": [
+            {
+              "name": "Network Segmentation",
+              "attack_id": "M1030"
+            },
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Disable or Modify Tools",
+            "attack_id": "T1685"
+          },
+          "mitigations": [
+            {
+              "name": "User Account Management",
+              "attack_id": "M1018"
+            },
+            {
+              "name": "Restrict File and Directory Permissions",
+              "attack_id": "M1022"
+            },
+            {
+              "name": "Restrict Registry Permissions",
+              "attack_id": "M1024"
+            },
+            {
+              "name": "Execution Prevention",
+              "attack_id": "M1038"
+            },
+            {
+              "name": "Disable or Remove Feature or Program",
+              "attack_id": "M1042"
+            },
+            {
+              "name": "Audit",
+              "attack_id": "M1047"
+            },
+            {
+              "name": "Software Configuration",
+              "attack_id": "M1054"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Clear Windows Event Logs",
+            "attack_id": "T1685.005"
+          },
+          "mitigations": [
+            {
+              "name": "Restrict File and Directory Permissions",
+              "attack_id": "M1022"
+            },
+            {
+              "name": "Remote Data Storage",
+              "attack_id": "M1029"
+            },
+            {
+              "name": "Encrypt Sensitive Information",
+              "attack_id": "M1041"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Disable or Modify System Firewall",
+            "attack_id": "T1686"
+          },
+          "mitigations": [
+            {
+              "name": "User Account Management",
+              "attack_id": "M1018"
+            },
+            {
+              "name": "Restrict File and Directory Permissions",
+              "attack_id": "M1022"
+            },
+            {
+              "name": "Restrict Registry Permissions",
+              "attack_id": "M1024"
+            },
+            {
+              "name": "Audit",
+              "attack_id": "M1047"
+            }
+          ]
+        }
+      ]
+    },
+    "required_hops": 3,
+    "graph_path": "ThreatGroup -USES-> Software -USES-> Technique <-MITIGATES- Mitigation",
+    "source": "MITRE ATT&CK Enterprise v19.2"
+  },
+  {
+    "id": "Q30",
+    "category": "group_software_technique_mitigation",
+    "question": "For Zox (S0672), software used by Axiom (G0001), which mitigations address each ATT&CK technique it implements?",
+    "expected_answer": {
+      "threat_group": {
+        "name": "Axiom",
+        "attack_id": "G0001"
+      },
+      "software": {
+        "name": "Zox",
+        "attack_id": "S0672"
+      },
+      "techniques_and_mitigations": [
+        {
+          "technique": {
+            "name": "Steganography",
+            "attack_id": "T1001.002"
+          },
+          "mitigations": [
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Data from Local System",
+            "attack_id": "T1005"
+          },
+          "mitigations": [
+            {
+              "name": "Data Loss Prevention",
+              "attack_id": "M1057"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "SMB/Windows Admin Shares",
+            "attack_id": "T1021.002"
+          },
+          "mitigations": [
+            {
+              "name": "Privileged Account Management",
+              "attack_id": "M1026"
+            },
+            {
+              "name": "Password Policies",
+              "attack_id": "M1027"
+            },
+            {
+              "name": "Limit Access to Resource Over Network",
+              "attack_id": "M1035"
+            },
+            {
+              "name": "Filter Network Traffic",
+              "attack_id": "M1037"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Encrypted/Encoded File",
+            "attack_id": "T1027.013"
+          },
+          "mitigations": [
+            {
+              "name": "Behavior Prevention on Endpoint",
+              "attack_id": "M1040"
+            },
+            {
+              "name": "Antivirus/Antimalware",
+              "attack_id": "M1049"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Exploitation for Privilege Escalation",
+            "attack_id": "T1068"
+          },
+          "mitigations": [
+            {
+              "name": "Threat Intelligence Program",
+              "attack_id": "M1019"
+            },
+            {
+              "name": "Execution Prevention",
+              "attack_id": "M1038"
+            },
+            {
+              "name": "Application Isolation and Sandboxing",
+              "attack_id": "M1048"
+            },
+            {
+              "name": "Exploit Protection",
+              "attack_id": "M1050"
+            },
+            {
+              "name": "Update Software",
+              "attack_id": "M1051"
+            }
+          ]
+        },
+        {
+          "technique": {
+            "name": "Ingress Tool Transfer",
+            "attack_id": "T1105"
+          },
+          "mitigations": [
+            {
+              "name": "Network Intrusion Prevention",
+              "attack_id": "M1031"
+            },
+            {
+              "name": "Filter Network Traffic",
+              "attack_id": "M1037"
+            }
+          ]
+        }
+      ]
+    },
+    "required_hops": 3,
+    "graph_path": "ThreatGroup -USES-> Software -USES-> Technique <-MITIGATES- Mitigation",
     "source": "MITRE ATT&CK Enterprise v19.2"
   }
 ]
