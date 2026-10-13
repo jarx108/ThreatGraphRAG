@@ -1,0 +1,18 @@
+{
+  "documents_processed": 60,
+  "triples_resolved": 13,
+  "edges_written": 11,
+  "edges_verified_by_stix": 8,
+  "verified_share": 0.7273,
+  "mean_confidence": 1.0,
+  "by_predicate": {
+    "MITIGATES": 2,
+    "USES": 9
+  },
+  "ned_methods": {
+    "attack_id": 19,
+    "normalized_name": 6,
+    "semantic": 1
+  },
+  "model": "llama3.1:8b"
+}

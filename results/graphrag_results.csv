@@ -1,0 +1,241 @@
+question_id,category,required_hops,question,answer,total_latency_seconds,retrieval_latency_seconds,generation_latency_seconds,input_tokens,output_tokens,estimated_cost_usd,context_chars,n_retrieved_chunks,n_graph_facts,error,faithfulness,answer_relevancy,context_precision,context_recall
+Q01,group_technique_mitigation,2,Which mitigations address the ATT&CK technique Steganography (T1001.002) used by Axiom (G0001)?,"Based on the provided context, the mitigation that addresses the ATT&CK technique Steganography (T1001.002) is Network Intrusion Prevention (M1031).",4.955087661743164,0.2776048183441162,4.677464008331299,1325,41,,3385,5,15,,0.5,0.8022523016419326,0.5407856304870063,1.0
+Q02,group_technique_mitigation,2,Which mitigations address the ATT&CK technique OS Credential Dumping (T1003) used by Axiom (G0001)?,"Based on the provided evidence, the mitigations that address the technique **OS Credential Dumping (T1003)**—which is used by **Axiom (G0001)**—are:
+
+*   **M1043** (Credential Access Protection)
+*   **M1028** (Operating System Configuration)
+*   **M1026** (Privileged Account Management)
+*   **M1027** (Password Policies)
+*   **M1041** (Encrypt Sensitive Information)",34.27657985687256,0.21660494804382324,34.05995583534241,1230,119,,3592,5,15,,1.0,0.7882369539405176,0.7263339349158894,0.5
+Q03,group_technique_mitigation,2,Which mitigations address the ATT&CK technique Data from Local System (T1005) used by Axiom (G0001)?,"Based on the provided context, the mitigation that addresses the technique Data from Local System (T1005) is **Data Loss Prevention (M1057)**.
+
+While the context confirms that **Zox (S0672)** uses **Data from Local System (T1005)** and that **Axiom (G0001)** has used Zox since at least 2008, the provided text does not explicitly link Axiom to the use of T1005; it only links the software Zox to that technique.",6.446838855743408,0.2101449966430664,6.236678838729858,1082,121,,2763,5,15,,1.0,0.0,0.5344136464509616,1.0
+Q04,group_technique_mitigation,2,Which mitigations address the ATT&CK technique Remote Desktop Protocol (T1021.001) used by Axiom (G0001)?,"The provided context does not contain information regarding the threat group Axiom (G0001).
+
+However, based on the provided graph relationships, the following mitigations address the Remote Desktop Protocol (T1021.001) technique:
+
+*   **M1028** (Operating System Configuration)
+*   **M1035** (Limit Access to Resource Over Network)
+*   **M1026** (Privileged Account Management)
+*   **M1018** (User Account Management)
+*   **M1030** (Network Segmentation)",8.185781955718994,0.11407876014709473,8.071682691574097,1293,130,,3993,5,15,,1.0,0.0,0.3538426494350862,0.5
+Q05,group_technique_mitigation,2,Which mitigations address the ATT&CK technique Valid Accounts (T1078) used by Axiom (G0001)?,"Based on the provided evidence, the context does not contain information regarding the threat group Axiom (G0001).
+
+However, the provided graph relationships indicate that the following mitigations address the technique **Valid Accounts (T1078)**:
+
+*   **M1013** (Application Developer Guidance)
+*   **M1017** (User Training)
+*   **M1026** (Privileged Account Management)
+*   **M1018** (User Account Management)
+*   **M1027** (Password Policies)",2.0360329151153564,0.1290743350982666,1.9069347381591797,1224,126,,3941,5,15,,1.0,0.0,0.7669178158686637,0.5
+Q06,group_technique_mitigation,2,Which mitigations address the ATT&CK technique Drive-by Compromise (T1189) used by Axiom (G0001)?,"Based on the provided evidence, the mitigations that address the technique Drive-by Compromise (T1189) are:
+
+*   M1021: Restrict Web-Based Content
+*   M1017: User Training
+*   M1048: Application Isolation and Sandboxing
+*   M1050: Exploit Protection
+*   M1051: Update Software
+
+The provided context does not contain information regarding the threat group Axiom (G0001).",4.927114009857178,0.10770201683044434,4.819395065307617,1027,111,,2603,5,15,,1.0,0.763257162907121,0.5430796128374542,1.0
+Q07,group_technique_mitigation,2,Which mitigations address the ATT&CK technique Exploit Public-Facing Application (T1190) used by Axiom (G0001)?,"Based on the provided context, the mitigations that address the technique Exploit Public-Facing Application (T1190) are:
+
+*   Vulnerability Scanning (M1016)
+*   Filter Network Traffic (M1037)
+*   Limit Access to Resource Over Network (M1035)
+*   Network Segmentation (M1030)
+*   Privileged Account Management (M1026)
+
+Regarding Axiom (G0001), the provided text evidence states that they use the remote access tool Zox (S0672), but the provided context does not contain information linking Axiom (G0001) to the use of the technique Exploit Public-Facing Application (T1190).",5.949991941452026,0.2601480484008789,5.689833879470825,983,165,,2362,5,15,,0.0,0.0,0.5344136464509616,0.5
+Q08,group_technique_mitigation,2,Which mitigations address the ATT&CK technique Exploitation for Client Execution (T1203) used by Axiom (G0001)?,"Based on the provided evidence, the mitigations that address the technique **Exploitation for Client Execution (T1203)** are:
+
+*   **M1048** (Application Isolation and Sandboxing)
+*   **M1050** (Exploit Protection)
+*   **M1051** (Update Software)
+
+The provided text does not contain information regarding the threat group Axiom (G0001).",5.991575241088867,0.21645188331604004,5.7750771045684814,1397,96,,4270,5,15,,1.0,0.8057630269523517,0.5745365163980113,1.0
+Q09,group_technique_mitigation,2,Which mitigations address the ATT&CK technique Accessibility Features (T1546.008) used by Axiom (G0001)?,"Based on the provided context, the mitigations that address the technique Accessibility Features (T1546.008) are:
+
+*   Operating System Configuration (M1028)
+*   Execution Prevention (M1038)
+*   Limit Access to Resource Over Network (M1035)",25.17381191253662,0.35184311866760254,24.82195472717285,1022,69,,2460,5,15,,1.0,0.7957588369924364,0.4277944277896744,1.0
+Q10,group_technique_mitigation,2,Which mitigations address the ATT&CK technique Subvert Trust Controls (T1553) used by Axiom (G0001)?,"Based on the provided evidence, the mitigations that address the technique Subvert Trust Controls (T1553) are:
+
+*   Software Configuration (M1054)
+*   Restrict Registry Permissions (M1024)
+*   Privileged Account Management (M1026)
+*   Operating System Configuration (M1028)
+*   Execution Prevention (M1038)",42.844167947769165,0.13789606094360352,42.706238985061646,1125,90,,2987,5,15,,1.0,0.820593922736716,0.4143733250816911,1.0
+Q11,group_technique_mitigation,2,Which mitigations address the ATT&CK technique Archive Collected Data (T1560) used by Axiom (G0001)?,"Based on the provided context, there is no information indicating that Axiom (G0001) uses the technique Archive Collected Data (T1560).
+
+Regarding the technique Archive Collected Data (T1560), the provided evidence states that it is mitigated by Audit (M1047).",6.928318023681641,0.14125418663024902,6.787044048309326,1142,65,,3121,5,15,,1.0,0.0,0.346108058604213,1.0
+Q12,group_technique_mitigation,2,Which mitigations address the ATT&CK technique RDP Hijacking (T1563.002) used by Axiom (G0001)?,"Based on the provided evidence, the mitigations that address RDP Hijacking (T1563.002) are:
+
+*   Disable or Remove Feature or Program (M1042)
+*   Audit (M1047)
+*   Privileged Account Management (M1026)
+*   User Account Management (M1018)
+*   Network Segmentation (M1030)
+*   Operating System Configuration (M1028)
+*   Limit Access to Resource Over Network (M1035)",5.826574087142944,0.08885002136230469,5.737706899642944,1160,123,,2821,5,15,,1.0,0.631401443093716,0.4062687312636528,1.0
+Q13,group_technique_mitigation,2,Which mitigations address the ATT&CK technique Phishing (T1566) used by Axiom (G0001)?,"Based on the provided evidence, the following mitigations address the Phishing (T1566) technique:
+
+*   **M1047** Audit
+*   **M1049** Antivirus/Antimalware
+*   **M1054** Software Configuration
+*   **M1021** Restrict Web-Based Content
+*   **M1017** User Training
+*   **M1031** Network Intrusion Prevention
+
+The context confirms that Axiom (G0001) uses the Phishing (T1566) technique.",37.92161583900452,0.15435576438903809,37.76722812652588,1328,131,,3726,5,15,,1.0,0.9388275491107232,0.6297317523768104,1.0
+Q14,group_technique_mitigation,2,Which mitigations address the ATT&CK technique DNS Server (T1583.002) used by Axiom (G0001)?,"Based on the provided evidence, the mitigation that addresses the ATT&CK technique DNS Server (T1583.002) is M1056 (Pre-compromise).",7.358689069747925,0.38202691078186035,6.976638078689575,1358,40,,4009,5,15,,0.6666666666666666,0.8403072877371208,0.4271524771453579,1.0
+Q15,group_software_technique,2,"Which ATT&CK techniques does Hikit (S0009), software used by Axiom (G0001), implement?","Based on the provided evidence, Hikit (S0009), which is used by Axiom (G0001), implements the following MITRE ATT&CK techniques:
+
+*   **T1059.003**: Windows Command Shell
+*   **T1566**: Phishing
+*   **T1005**: Data from Local System
+*   **T1574.001**: DLL Search Order Hijacking (referenced as DLL)
+*   **T1105**: Ingress Tool Transfer
+*   **T1553.004**: Install Root Certificate
+*   **T1573.001**: Symmetric Cryptography
+*   **T1553.006**: Code Signing Policy Modification
+*   **T1090.001**: Internal Proxy
+*   **T1014**: Rootkit
+*   **T1071.001**: Web Protocols",9.155748844146729,0.14655685424804688,9.009178161621094,1070,215,,2659,5,15,,1.0,0.8280242224845432,0.3329804488770219,1.0
+Q16,group_software_technique,2,"Which ATT&CK techniques does PoisonIvy (S0012), software used by Axiom (G0001), implement?","Based on the provided evidence, PoisonIvy (S0012), which is used by Axiom (G0001), implements the following MITRE ATT&CK techniques:
+
+*   **T1105**: Ingress Tool Transfer
+*   **T1056.001**: Keylogging
+*   **T1027**: Obfuscated Files or Information
+*   **T1074.001**: Local Data Staging
+*   **T1055.001**: Dynamic-link Library Injection
+*   **T1547.014**: Active Setup
+*   **T1480.002**: Mutual Exclusion",6.685425043106079,0.23903894424438477,6.446354866027832,1218,153,,3115,5,15,,1.0,0.8091839760614121,0.1221502955208368,0.5333333333333333
+Q17,group_software_technique,2,"Which ATT&CK techniques does PlugX (S0013), software used by Axiom (G0001), implement?","Based on the provided context, there is no evidence that Axiom (G0001) uses PlugX (S0013). The text states that Axiom (G0001) uses Zox (S0672).
+
+Regarding the techniques implemented by PlugX (S0013), the provided graph relationships indicate it uses the following:
+
+*   **T1053.005** (Scheduled Task)
+*   **T1564.003** (Hidden Window)
+*   **T1033** (System Owner/User Discovery)
+*   **T1057** (Process Discovery)
+*   **T1071.001** (Web Protocols)
+*   **T1135** (Network Share Discovery)
+*   **T1070.009** (Clear Persistence)",32.86114311218262,0.09271931648254395,32.76840400695801,995,196,,2342,5,15,,1.0,0.0,0.2557664557613404,0.8333333333333334
+Q18,group_software_technique,2,"Which ATT&CK techniques does Derusbi (S0021), software used by Axiom (G0001), implement?","Based on the provided evidence, Derusbi (S0021), which is used by Axiom (G0001), implements the following MITRE ATT&CK techniques:
+
+*   **T1083**: File and Directory Discovery
+*   **T1070.006**: Timestomp
+*   **T1218.010**: Regsvr32
+*   **T1095**: Non-Application Layer Protocol
+*   **T1008**: Fallback Channels
+*   **T1070.004**: File Deletion
+*   **T1057**: Process Discovery
+*   **T1573.001**: Symmetric Cryptography
+*   **T1571**: Non-Standard Port
+*   **T1056.001**: Keylogging
+*   **T1113**: Screen Capture",3.7696478366851807,0.16434097290039062,3.6052908897399902,1076,204,,2721,5,15,,1.0,0.7889311686149935,0.1228632478591524,0.6111111111111112
+Q19,group_software_technique,2,"Which ATT&CK techniques does gh0st RAT (S0032), software used by Axiom (G0001), implement?","Based on the provided evidence, gh0st RAT (S0032), which is used by Axiom (G0001), implements the following MITRE ATT&CK techniques:
+
+*   **T1568.001**: Fast Flux DNS
+*   **T1112**: Modify Registry
+*   **T1095**: Non-Application Layer Protocol
+*   **T1685.005**: Clear Windows Event Logs
+*   **T1129**: Shared Modules
+*   **T1574.001**: DLL Search Order Hijacking (referenced as T1574.001 DLL)
+*   **T1573.001**: Symmetric Cryptography",7.690509796142578,0.11227607727050781,7.578217029571533,963,164,,2086,5,15,,0.8888888888888888,0.8409025018415658,0.1820558526395365,0.0
+Q20,group_software_technique,2,"Which ATT&CK techniques does Hydraq (S0203), software used by Axiom (G0001), implement?","Based on the provided evidence, Hydraq (S0203), which is used by Axiom (G0001), implements the following MITRE ATT&CK techniques:
+
+*   **T1134**: Access Token Manipulation
+*   **T1569.002**: Service Execution
+*   **T1012**: Query Registry
+*   **T1005**: Data from Local System
+*   **T1543.003**: Windows Service
+*   **T1048**: Exfiltration Over Alternative Protocol
+*   **T1112**: Modify Registry
+*   **T1027**: Obfuscated Files or Information
+*   **T1007**: System Service Discovery
+*   **T1105**: Ingress Tool Transfer
+*   **T1082**: System Information Discovery
+*   **T1057**: Process Discovery
+*   **T1016**: System Network Configuration Discovery",6.315136194229126,0.16824913024902344,6.146871089935303,1048,218,,2648,5,15,,1.0,0.8589545612361236,0.0954545454497727,0.65
+Q21,group_software_technique,2,"Which ATT&CK techniques does ZxShell (S0412), software used by Axiom (G0001), implement?","Based on the provided evidence, ZxShell (S0412), which is used by Axiom (G0001), implements the following MITRE ATT&CK techniques:
+
+*   **T1106**: Native API
+*   **T1571**: Non-Standard Port
+*   **T1112**: Modify Registry
+*   **T1090**: Proxy
+*   **T1005**: Data from Local System
+*   **T1071.002**: File Transfer Protocols
+*   **T1499**: Endpoint Denial of Service
+*   **T1021.001**: Remote Desktop Protocol
+*   **T1007**: System Service Discovery
+*   **T1685**: Disable or Modify Tools
+*   **T1071.001**: Web Protocols
+*   **T1012**: Query Registry",5.758807182312012,0.18453693389892578,5.574244976043701,1070,205,,2739,5,15,,1.0,0.8482797295023721,0.2044603952658111,0.5
+Q22,group_software_technique,2,"Which ATT&CK techniques does Zox (S0672), software used by Axiom (G0001), implement?","Based on the provided evidence, Zox (S0672), which is used by Axiom (G0001), implements the following MITRE ATT&CK techniques:
+
+*   **T1001.002**: Steganography
+*   **T1005**: Data from Local System
+*   **T1027.013**: Encrypted/Encoded File
+*   **T1105**: Ingress Tool Transfer
+*   **T1083**: File and Directory Discovery
+*   **T1021.002**: SMB/Windows Admin Shares
+*   **T1057**: Process Discovery
+*   **T1680**: Local Storage Discovery
+*   **T1068**: Exploitation for Privilege Escalation",68.6581974029541,0.17287898063659668,68.48529005050659,1044,176,,2564,5,15,,0.9,0.7412797989804675,0.1946127946063075,1.0
+Q23,group_software_technique_mitigation,3,"For Hikit (S0009), software used by Axiom (G0001), which mitigations address each ATT&CK technique it implements?","Based on the provided context, the following mitigations address the techniques implemented by Hikit (S0009):
+
+*   **T1059.003 (Windows Command Shell):** This technique is mitigated by **M1038** (Execution Prevention).
+
+The provided text and graph relationships do not contain information regarding mitigations for the other techniques implemented by Hikit (S0009), which include:
+*   T1566 (Phishing)
+*   T1005 (Data from Local System)
+*   T1574.001 (DLL Search Order Hijacking)
+*   T1105 (Ingress Tool Transfer)
+*   T1553.004 (Install Root Certificate)
+*   T1573.001 (Symmetric Cryptography)
+*   T1553.006 (Code Signing Policy Modification)
+*   T1090.001 (Internal Proxy)
+*   T1014 (Rootkit)
+*   T1071.001 (Web Protocols)",3.7507410049438477,0.132279634475708,3.6184377670288086,1116,247,,2893,5,15,,0.8461538461538461,0.0,0.5029768961330328,1.0
+Q24,group_software_technique_mitigation,3,"For PoisonIvy (S0012), software used by Axiom (G0001), which mitigations address each ATT&CK technique it implements?","Based on the provided context, the following MITRE ATT&CK techniques are implemented by PoisonIvy (S0012). However, the provided text and graph relationships do not contain information regarding the mitigations for these techniques:
+
+*   **T1105** (Ingress Tool Transfer)
+*   **T1056.001** (Keylogging)
+*   **T1027** (Obfuscated Files or Information)
+*   **T1074.001** (Local Data Staging)
+*   **T1055.001** (Dynamic-link Library Injection)
+*   **T1547.014** (Active Setup)
+*   **T1480.002** (Mutual Exclusion)
+
+The provided context does not contain enough information to list the mitigations for these techniques.",41.11486196517944,0.2517666816711426,40.863062143325806,1090,193,,2739,5,15,,0.5,0.0,0.3169323925089262,0.0
+Q25,group_software_technique_mitigation,3,"For PlugX (S0013), software used by Axiom (G0001), which mitigations address each ATT&CK technique it implements?","Based on the provided context, there is no information indicating that Axiom (G0001) uses PlugX (S0013). The context states that Axiom (G0001) uses the remote access tool Zox (S0672).
+
+Furthermore, the provided text does not contain information regarding mitigations for the techniques implemented by PlugX (S0013).",9.37217402458191,0.22338199615478516,9.14876389503479,968,85,,2154,5,15,,1.0,0.0,0.3500145880907082,0.0
+Q26,group_software_technique_mitigation,3,"For Derusbi (S0021), software used by Axiom (G0001), which mitigations address each ATT&CK technique it implements?","The provided context does not contain information regarding mitigations for the techniques implemented by Derusbi (S0021). Therefore, I cannot answer your question using the provided evidence.",4.072052955627441,0.19130277633666992,3.8807270526885986,1049,37,,2420,5,15,,1.0,0.0,0.4370626240864554,0.1428571428571428
+Q27,group_software_technique_mitigation,3,"For gh0st RAT (S0032), software used by Axiom (G0001), which mitigations address each ATT&CK technique it implements?","Based on the provided context, the following techniques are implemented by gh0st RAT (S0032). However, the provided text and graph relationships do not contain information regarding the mitigations for these techniques:
+
+*   **T1568.001** (Fast Flux DNS)
+*   **T1112** (Modify Registry)
+*   **T1095** (Non-Application Layer Protocol)
+*   **T1685.005** (Clear Windows Event Logs)
+*   **T1129** (Shared Modules)
+*   **T1574.001** (DLL Search Order Hijacking)
+*   **T1573.001** (Symmetric Cryptography)
+
+The provided context does not contain enough information to answer which mitigations address these techniques.",14.760708093643188,0.14368987083435059,14.617005825042725,954,186,,2030,5,15,,0.8888888888888888,0.0,0.5979012416269093,0.0
+Q28,group_software_technique_mitigation,3,"For Hydraq (S0203), software used by Axiom (G0001), which mitigations address each ATT&CK technique it implements?","The provided context does not contain information regarding mitigations for the techniques implemented by Hydraq (S0203). Therefore, I cannot answer your question.",2.705379009246826,0.14224982261657715,2.563108205795288,1095,32,,2703,5,15,,1.0,0.0,0.5183156571388015,0.7272727272727273
+Q29,group_software_technique_mitigation,3,"For ZxShell (S0412), software used by Axiom (G0001), which mitigations address each ATT&CK technique it implements?","Based on the provided context, there is no information regarding mitigations for the techniques implemented by ZxShell (S0412). Therefore, I cannot answer your question.",8.363051891326904,0.2730100154876709,8.090025901794434,1118,36,,2892,5,15,,0.5,0.0,0.4721267535978777,0.0
+Q30,group_software_technique_mitigation,3,"For Zox (S0672), software used by Axiom (G0001), which mitigations address each ATT&CK technique it implements?","Based on the provided evidence, the following mitigations address the techniques implemented by Zox (S0672):
+
+*   **T1001.002 (Steganography):** Addressed by **M1031** (Network Intrusion Prevention).
+*   **T1005 (Data from Local System):** Addressed by **M1057** (Data Loss Prevention).
+
+The provided context does not contain information regarding mitigations for the other techniques implemented by Zox (S0672), which include:
+*   T1027.013 (Encrypted/Encoded File)
+*   T1105 (Ingress Tool Transfer)
+*   T1083 (File and Directory Discovery)
+*   T1021.002 (SMB/Windows Admin Shares)
+*   T1057 (Process Discovery)
+*   T1680 (Local Storage Discovery)
+*   T1068 (Exploitation for Privilege Escalation)",8.710137844085693,0.10625910758972168,8.603862762451172,1071,227,,2675,5,15,,0.9090909090909092,0.0,0.5278135701534933,0.3333333333333333

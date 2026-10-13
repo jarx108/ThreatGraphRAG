@@ -1,0 +1,762 @@
+{
+  "computed_at": "2026-10-13T21:43:23+00:00",
+  "gds_version": "2026.09.0",
+  "projection": {
+    "nodes": 1755,
+    "relationships": 18613,
+    "relationship_types": [
+      "USES",
+      "MITIGATES",
+      "ATTRIBUTED_TO"
+    ],
+    "source_filter": "mitre_attack_stix"
+  },
+  "topology": {
+    "density": 0.012093,
+    "mean_degree": 21.21,
+    "max_degree": 493,
+    "components": 1,
+    "largest_component": 1755,
+    "largest_component_share": 1.0
+  },
+  "pagerank": {
+    "iterations": 50,
+    "converged": false,
+    "top_by_label": {
+      "Campaign": [
+        {
+          "attack_id": "C0030",
+          "name": "Triton Safety Instrumented System Attack",
+          "degree": 1.0,
+          "pagerank": 0.3107081751428277
+        },
+        {
+          "attack_id": "C0032",
+          "name": "C0032",
+          "degree": 1.0,
+          "pagerank": 0.3107081751428277
+        },
+        {
+          "attack_id": "C0057",
+          "name": "3CX Supply Chain Attack",
+          "degree": 1.0,
+          "pagerank": 0.2892961589956307
+        },
+        {
+          "attack_id": "C0052",
+          "name": "SPACEHOP Activity",
+          "degree": 2.0,
+          "pagerank": 0.22672494080084798
+        },
+        {
+          "attack_id": "C0033",
+          "name": "C0033",
+          "degree": 1.0,
+          "pagerank": 0.2063314652017254
+        },
+        {
+          "attack_id": "C0056",
+          "name": "RedPenguin",
+          "degree": 1.0,
+          "pagerank": 0.19400425508347863
+        },
+        {
+          "attack_id": "C0011",
+          "name": "C0011",
+          "degree": 1.0,
+          "pagerank": 0.1938463653945552
+        },
+        {
+          "attack_id": "C0027",
+          "name": "C0027",
+          "degree": 1.0,
+          "pagerank": 0.1923090336004504
+        },
+        {
+          "attack_id": "C0023",
+          "name": "Operation Ghost",
+          "degree": 1.0,
+          "pagerank": 0.19164375033183065
+        },
+        {
+          "attack_id": "C0024",
+          "name": "SolarWinds Compromise",
+          "degree": 1.0,
+          "pagerank": 0.19164375033183065
+        }
+      ],
+      "Mitigation": [
+        {
+          "attack_id": "M1056",
+          "name": "Pre-compromise",
+          "degree": 88.0,
+          "pagerank": 8.718912657367945
+        },
+        {
+          "attack_id": "M1018",
+          "name": "User Account Management",
+          "degree": 119.0,
+          "pagerank": 7.208794966652724
+        },
+        {
+          "attack_id": "M1047",
+          "name": "Audit",
+          "degree": 110.0,
+          "pagerank": 6.8232558732856345
+        },
+        {
+          "attack_id": "M1026",
+          "name": "Privileged Account Management",
+          "degree": 112.0,
+          "pagerank": 6.48051032146216
+        },
+        {
+          "attack_id": "M1038",
+          "name": "Execution Prevention",
+          "degree": 79.0,
+          "pagerank": 4.94472955426338
+        },
+        {
+          "attack_id": "M1042",
+          "name": "Disable or Remove Feature or Program",
+          "degree": 71.0,
+          "pagerank": 4.608739740610518
+        },
+        {
+          "attack_id": "M1022",
+          "name": "Restrict File and Directory Permissions",
+          "degree": 60.0,
+          "pagerank": 3.8250157906950477
+        },
+        {
+          "attack_id": "M1037",
+          "name": "Filter Network Traffic",
+          "degree": 49.0,
+          "pagerank": 3.458955468370176
+        },
+        {
+          "attack_id": "M1017",
+          "name": "User Training",
+          "degree": 60.0,
+          "pagerank": 3.427747903352949
+        },
+        {
+          "attack_id": "M1040",
+          "name": "Behavior Prevention on Endpoint",
+          "degree": 51.0,
+          "pagerank": 3.239403359444983
+        }
+      ],
+      "Software": [
+        {
+          "attack_id": "S0154",
+          "name": "Cobalt Strike",
+          "degree": 103.0,
+          "pagerank": 4.07796585722011
+        },
+        {
+          "attack_id": "S0363",
+          "name": "Empire",
+          "degree": 90.0,
+          "pagerank": 3.7867271432566825
+        },
+        {
+          "attack_id": "S0002",
+          "name": "Mimikatz",
+          "degree": 68.0,
+          "pagerank": 3.1745829953674414
+        },
+        {
+          "attack_id": "S0260",
+          "name": "InvisiMole",
+          "degree": 73.0,
+          "pagerank": 2.8646400828815834
+        },
+        {
+          "attack_id": "S0650",
+          "name": "QakBot",
+          "degree": 74.0,
+          "pagerank": 2.799332242236581
+        },
+        {
+          "attack_id": "S9043",
+          "name": "Mini Shai-Hulud",
+          "degree": 56.0,
+          "pagerank": 2.6212459619177895
+        },
+        {
+          "attack_id": "S0013",
+          "name": "PlugX",
+          "degree": 64.0,
+          "pagerank": 2.5073425342873357
+        },
+        {
+          "attack_id": "S1111",
+          "name": "DarkGate",
+          "degree": 58.0,
+          "pagerank": 2.3536881686425506
+        },
+        {
+          "attack_id": "S0266",
+          "name": "TrickBot",
+          "degree": 57.0,
+          "pagerank": 2.254842636791496
+        },
+        {
+          "attack_id": "S9041",
+          "name": "TeamPCP Cloud Stealer",
+          "degree": 48.0,
+          "pagerank": 2.2256584111567825
+        }
+      ],
+      "Technique": [
+        {
+          "attack_id": "T1105",
+          "name": "Ingress Tool Transfer",
+          "degree": 493.0,
+          "pagerank": 19.887280247460765
+        },
+        {
+          "attack_id": "T1071.001",
+          "name": "Web Protocols",
+          "degree": 403.0,
+          "pagerank": 16.21580632863515
+        },
+        {
+          "attack_id": "T1082",
+          "name": "System Information Discovery",
+          "degree": 413.0,
+          "pagerank": 16.133871405066614
+        },
+        {
+          "attack_id": "T1059.003",
+          "name": "Windows Command Shell",
+          "degree": 369.0,
+          "pagerank": 14.695084501993053
+        },
+        {
+          "attack_id": "T1083",
+          "name": "File and Directory Discovery",
+          "degree": 360.0,
+          "pagerank": 14.380905694953377
+        },
+        {
+          "attack_id": "T1140",
+          "name": "Deobfuscate/Decode Files or Information",
+          "degree": 339.0,
+          "pagerank": 13.564960290336112
+        },
+        {
+          "attack_id": "T1057",
+          "name": "Process Discovery",
+          "degree": 309.0,
+          "pagerank": 12.012877581897808
+        },
+        {
+          "attack_id": "T1070.004",
+          "name": "File Deletion",
+          "degree": 298.0,
+          "pagerank": 11.676899362717787
+        },
+        {
+          "attack_id": "T1016",
+          "name": "System Network Configuration Discovery",
+          "degree": 276.0,
+          "pagerank": 10.739115368449498
+        },
+        {
+          "attack_id": "T1547.001",
+          "name": "Registry Run Keys / Startup Folder",
+          "degree": 258.0,
+          "pagerank": 10.058808360683026
+        }
+      ],
+      "ThreatGroup": [
+        {
+          "attack_id": "G0094",
+          "name": "Kimsuky",
+          "degree": 149.0,
+          "pagerank": 6.4170567290620255
+        },
+        {
+          "attack_id": "G0007",
+          "name": "APT28",
+          "degree": 123.0,
+          "pagerank": 5.735967477498993
+        },
+        {
+          "attack_id": "G0016",
+          "name": "APT29",
+          "degree": 117.0,
+          "pagerank": 5.732427425178163
+        },
+        {
+          "attack_id": "G0034",
+          "name": "Sandworm Team",
+          "degree": 109.0,
+          "pagerank": 5.307539007230758
+        },
+        {
+          "attack_id": "G0096",
+          "name": "APT41",
+          "degree": 116.0,
+          "pagerank": 5.091890086289147
+        },
+        {
+          "attack_id": "G0032",
+          "name": "Lazarus Group",
+          "degree": 120.0,
+          "pagerank": 5.02933109534528
+        },
+        {
+          "attack_id": "G1017",
+          "name": "Volt Typhoon",
+          "degree": 100.0,
+          "pagerank": 4.769646130477511
+        },
+        {
+          "attack_id": "G0129",
+          "name": "Mustang Panda",
+          "degree": 109.0,
+          "pagerank": 4.703612854128981
+        },
+        {
+          "attack_id": "G0049",
+          "name": "OilRig",
+          "degree": 108.0,
+          "pagerank": 4.602737272016985
+        },
+        {
+          "attack_id": "G0010",
+          "name": "Turla",
+          "degree": 98.0,
+          "pagerank": 4.044470912644238
+        }
+      ]
+    }
+  },
+  "louvain": {
+    "communities": 6,
+    "modularity": 0.2677,
+    "levels": 2,
+    "largest": [
+      {
+        "community": 780,
+        "size": 594,
+        "groups": 41,
+        "software": 453,
+        "techniques": 99,
+        "mitigations": 0,
+        "campaigns": 1,
+        "top_members": [
+          {
+            "attack_id": "T1105",
+            "name": "Ingress Tool Transfer",
+            "label": "Technique"
+          },
+          {
+            "attack_id": "T1071.001",
+            "name": "Web Protocols",
+            "label": "Technique"
+          },
+          {
+            "attack_id": "T1082",
+            "name": "System Information Discovery",
+            "label": "Technique"
+          },
+          {
+            "attack_id": "T1059.003",
+            "name": "Windows Command Shell",
+            "label": "Technique"
+          },
+          {
+            "attack_id": "T1083",
+            "name": "File and Directory Discovery",
+            "label": "Technique"
+          },
+          {
+            "attack_id": "T1140",
+            "name": "Deobfuscate/Decode Files or Information",
+            "label": "Technique"
+          },
+          {
+            "attack_id": "T1057",
+            "name": "Process Discovery",
+            "label": "Technique"
+          },
+          {
+            "attack_id": "T1070.004",
+            "name": "File Deletion",
+            "label": "Technique"
+          }
+        ]
+      },
+      {
+        "community": 304,
+        "size": 523,
+        "groups": 113,
+        "software": 102,
+        "techniques": 271,
+        "mitigations": 16,
+        "campaigns": 21,
+        "top_members": [
+          {
+            "attack_id": "M1056",
+            "name": "Pre-compromise",
+            "label": "Mitigation"
+          },
+          {
+            "attack_id": "T1059.001",
+            "name": "PowerShell",
+            "label": "Technique"
+          },
+          {
+            "attack_id": "M1026",
+            "name": "Privileged Account Management",
+            "label": "Mitigation"
+          },
+          {
+            "attack_id": "G0094",
+            "name": "Kimsuky",
+            "label": "ThreatGroup"
+          },
+          {
+            "attack_id": "G0007",
+            "name": "APT28",
+            "label": "ThreatGroup"
+          },
+          {
+            "attack_id": "G0016",
+            "name": "APT29",
+            "label": "ThreatGroup"
+          },
+          {
+            "attack_id": "G0034",
+            "name": "Sandworm Team",
+            "label": "ThreatGroup"
+          },
+          {
+            "attack_id": "G0096",
+            "name": "APT41",
+            "label": "ThreatGroup"
+          }
+        ]
+      },
+      {
+        "community": 693,
+        "size": 371,
+        "groups": 7,
+        "software": 94,
+        "techniques": 244,
+        "mitigations": 25,
+        "campaigns": 1,
+        "top_members": [
+          {
+            "attack_id": "M1018",
+            "name": "User Account Management",
+            "label": "Mitigation"
+          },
+          {
+            "attack_id": "M1047",
+            "name": "Audit",
+            "label": "Mitigation"
+          },
+          {
+            "attack_id": "M1038",
+            "name": "Execution Prevention",
+            "label": "Mitigation"
+          },
+          {
+            "attack_id": "M1042",
+            "name": "Disable or Remove Feature or Program",
+            "label": "Mitigation"
+          },
+          {
+            "attack_id": "M1022",
+            "name": "Restrict File and Directory Permissions",
+            "label": "Mitigation"
+          },
+          {
+            "attack_id": "M1037",
+            "name": "Filter Network Traffic",
+            "label": "Mitigation"
+          },
+          {
+            "attack_id": "M1040",
+            "name": "Behavior Prevention on Endpoint",
+            "label": "Mitigation"
+          },
+          {
+            "attack_id": "G1048",
+            "name": "UNC3886",
+            "label": "ThreatGroup"
+          }
+        ]
+      },
+      {
+        "community": 684,
+        "size": 143,
+        "groups": 3,
+        "software": 95,
+        "techniques": 42,
+        "mitigations": 3,
+        "campaigns": 0,
+        "top_members": [
+          {
+            "attack_id": "T1047",
+            "name": "Windows Management Instrumentation",
+            "label": "Technique"
+          },
+          {
+            "attack_id": "T1685",
+            "name": "Disable or Modify Tools",
+            "label": "Technique"
+          },
+          {
+            "attack_id": "T1486",
+            "name": "Data Encrypted for Impact",
+            "label": "Technique"
+          },
+          {
+            "attack_id": "T1569.002",
+            "name": "Service Execution",
+            "label": "Technique"
+          },
+          {
+            "attack_id": "T1135",
+            "name": "Network Share Discovery",
+            "label": "Technique"
+          },
+          {
+            "attack_id": "T1548.002",
+            "name": "Bypass User Account Control",
+            "label": "Technique"
+          },
+          {
+            "attack_id": "T1007",
+            "name": "System Service Discovery",
+            "label": "Technique"
+          },
+          {
+            "attack_id": "G0082",
+            "name": "APT38",
+            "label": "ThreatGroup"
+          }
+        ]
+      },
+      {
+        "community": 1137,
+        "size": 112,
+        "groups": 11,
+        "software": 72,
+        "techniques": 27,
+        "mitigations": 0,
+        "campaigns": 2,
+        "top_members": [
+          {
+            "attack_id": "T1112",
+            "name": "Modify Registry",
+            "label": "Technique"
+          },
+          {
+            "attack_id": "T1543.003",
+            "name": "Windows Service",
+            "label": "Technique"
+          },
+          {
+            "attack_id": "G0032",
+            "name": "Lazarus Group",
+            "label": "ThreatGroup"
+          },
+          {
+            "attack_id": "T1573.002",
+            "name": "Asymmetric Cryptography",
+            "label": "Technique"
+          },
+          {
+            "attack_id": "T1036.004",
+            "name": "Masquerade Task or Service",
+            "label": "Technique"
+          },
+          {
+            "attack_id": "T1553.002",
+            "name": "Code Signing",
+            "label": "Technique"
+          },
+          {
+            "attack_id": "T1055.001",
+            "name": "Dynamic-link Library Injection",
+            "label": "Technique"
+          },
+          {
+            "attack_id": "T1571",
+            "name": "Non-Standard Port",
+            "label": "Technique"
+          }
+        ]
+      },
+      {
+        "community": 810,
+        "size": 12,
+        "groups": 1,
+        "software": 9,
+        "techniques": 2,
+        "mitigations": 0,
+        "campaigns": 0,
+        "top_members": [
+          {
+            "attack_id": "T1102.002",
+            "name": "Bidirectional Communication",
+            "label": "Technique"
+          },
+          {
+            "attack_id": "G0005",
+            "name": "APT12",
+            "label": "ThreatGroup"
+          },
+          {
+            "attack_id": "S1023",
+            "name": "CreepyDrive",
+            "label": "Software"
+          },
+          {
+            "attack_id": "S0040",
+            "name": "HTRAN",
+            "label": "Software"
+          },
+          {
+            "attack_id": "S0393",
+            "name": "PowerStallion",
+            "label": "Software"
+          },
+          {
+            "attack_id": "S0215",
+            "name": "KARAE",
+            "label": "Software"
+          },
+          {
+            "attack_id": "S1171",
+            "name": "OilCheck",
+            "label": "Software"
+          },
+          {
+            "attack_id": "S0054",
+            "name": "CloudDuke",
+            "label": "Software"
+          }
+        ]
+      }
+    ]
+  },
+  "label_counts": [
+    {
+      "label": "Campaign",
+      "nodes": 25,
+      "avg_degree": 1.04
+    },
+    {
+      "label": "Mitigation",
+      "nodes": 44,
+      "avg_degree": 32.90909090909091
+    },
+    {
+      "label": "Software",
+      "nodes": 825,
+      "avg_degree": 15.164848484848482
+    },
+    {
+      "label": "Technique",
+      "nodes": 685,
+      "avg_degree": 25.456934306569377
+    },
+    {
+      "label": "ThreatGroup",
+      "nodes": 176,
+      "avg_degree": 32.971590909090914
+    }
+  ],
+  "examples": {
+    "mitigation_coverage_G0016": [
+      {
+        "group_name": "APT29",
+        "attack_id": "M1026",
+        "mitigation": "Privileged Account Management",
+        "covered": 18,
+        "total": 66
+      },
+      {
+        "group_name": "APT29",
+        "attack_id": "M1018",
+        "mitigation": "User Account Management",
+        "covered": 15,
+        "total": 66
+      },
+      {
+        "group_name": "APT29",
+        "attack_id": "M1032",
+        "mitigation": "Multi-factor Authentication",
+        "covered": 14,
+        "total": 66
+      },
+      {
+        "group_name": "APT29",
+        "attack_id": "M1017",
+        "mitigation": "User Training",
+        "covered": 11,
+        "total": 66
+      },
+      {
+        "group_name": "APT29",
+        "attack_id": "M1038",
+        "mitigation": "Execution Prevention",
+        "covered": 10,
+        "total": 66
+      },
+      {
+        "group_name": "APT29",
+        "attack_id": "M1047",
+        "mitigation": "Audit",
+        "covered": 10,
+        "total": 66
+      },
+      {
+        "group_name": "APT29",
+        "attack_id": "M1027",
+        "mitigation": "Password Policies",
+        "covered": 8,
+        "total": 66
+      },
+      {
+        "group_name": "APT29",
+        "attack_id": "M1021",
+        "mitigation": "Restrict Web-Based Content",
+        "covered": 7,
+        "total": 66
+      },
+      {
+        "group_name": "APT29",
+        "attack_id": "M1042",
+        "mitigation": "Disable or Remove Feature or Program",
+        "covered": 7,
+        "total": 66
+      },
+      {
+        "group_name": "APT29",
+        "attack_id": "M1056",
+        "mitigation": "Pre-compromise",
+        "covered": 7,
+        "total": 66
+      }
+    ],
+    "shortest_path_G0016_G0007": [
+      {
+        "path": [
+          "G0016 APT29",
+          "T1110.001 Password Guessing",
+          "G0007 APT28"
+        ],
+        "hops": 2
+      }
+    ]
+  }
+}

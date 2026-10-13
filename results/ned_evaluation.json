@@ -1,0 +1,247 @@
+{
+  "n_cases": 4968,
+  "n_entities": 1798,
+  "ambiguous_aliases_excluded": 27,
+  "template": "Which techniques are associated with {} in recent intrusions?",
+  "baseline_exact_name": {
+    "canonical name": {
+      "n": 1798,
+      "accuracy": 0.9816462736373749,
+      "wrong_link": 33,
+      "unlinked": 0
+    },
+    "alias": {
+      "n": 686,
+      "accuracy": 0.0,
+      "wrong_link": 0,
+      "unlinked": 686
+    },
+    "alias (lower case)": {
+      "n": 686,
+      "accuracy": 0.0,
+      "wrong_link": 0,
+      "unlinked": 686
+    },
+    "ATT&CK ID": {
+      "n": 1798,
+      "accuracy": 0.0055617352614015575,
+      "wrong_link": 0,
+      "unlinked": 1788
+    },
+    "overall": {
+      "n": 4968,
+      "accuracy": 0.3572866344605475,
+      "wrong_link": 33,
+      "unlinked": 3160
+    }
+  },
+  "threatgraph_ned": {
+    "canonical name": {
+      "n": 1798,
+      "accuracy": 0.9694104560622915,
+      "wrong_link": 35,
+      "unlinked": 20
+    },
+    "alias": {
+      "n": 686,
+      "accuracy": 0.9956268221574344,
+      "wrong_link": 0,
+      "unlinked": 3
+    },
+    "alias (lower case)": {
+      "n": 686,
+      "accuracy": 0.9927113702623906,
+      "wrong_link": 0,
+      "unlinked": 5
+    },
+    "ATT&CK ID": {
+      "n": 1798,
+      "accuracy": 1.0,
+      "wrong_link": 0,
+      "unlinked": 0
+    },
+    "overall": {
+      "n": 4968,
+      "accuracy": 0.9873188405797102,
+      "wrong_link": 35,
+      "unlinked": 28
+    }
+  },
+  "failures_sample": [
+    {
+      "variant": "alias",
+      "mention": "BlackEnergy (Group)",
+      "expected": "G0034",
+      "type": "ThreatGroup",
+      "predicted": null
+    },
+    {
+      "variant": "alias (lower case)",
+      "mention": "blackenergy (group)",
+      "expected": "G0034",
+      "type": "ThreatGroup",
+      "predicted": null
+    },
+    {
+      "variant": "canonical name",
+      "mention": "Audit",
+      "expected": "M1047",
+      "type": "Mitigation",
+      "predicted": null
+    },
+    {
+      "variant": "alias (lower case)",
+      "mention": "wce",
+      "expected": "S0005",
+      "type": "Software",
+      "predicted": null
+    },
+    {
+      "variant": "alias (lower case)",
+      "mention": "tvt",
+      "expected": "S0013",
+      "type": "Software",
+      "predicted": null
+    },
+    {
+      "variant": "canonical name",
+      "mention": "Carbanak",
+      "expected": "S0030",
+      "type": "Software",
+      "predicted": "G0008"
+    },
+    {
+      "variant": "canonical name",
+      "mention": "Net",
+      "expected": "S0039",
+      "type": "Software",
+      "predicted": null
+    },
+    {
+      "variant": "canonical name",
+      "mention": "Reg",
+      "expected": "S0075",
+      "type": "Software",
+      "predicted": null
+    },
+    {
+      "variant": "alias",
+      "mention": "Page",
+      "expected": "S0081",
+      "type": "Software",
+      "predicted": null
+    },
+    {
+      "variant": "alias (lower case)",
+      "mention": "page",
+      "expected": "S0081",
+      "type": "Software",
+      "predicted": null
+    },
+    {
+      "variant": "canonical name",
+      "mention": "ftp",
+      "expected": "S0095",
+      "type": "Software",
+      "predicted": null
+    },
+    {
+      "variant": "canonical name",
+      "mention": "Arp",
+      "expected": "S0099",
+      "type": "Software",
+      "predicted": null
+    },
+    {
+      "variant": "canonical name",
+      "mention": "cmd",
+      "expected": "S0106",
+      "type": "Software",
+      "predicted": null
+    },
+    {
+      "variant": "canonical name",
+      "mention": "at",
+      "expected": "S0110",
+      "type": "Software",
+      "predicted": null
+    },
+    {
+      "variant": "canonical name",
+      "mention": "RTM",
+      "expected": "S0148",
+      "type": "Software",
+      "predicted": "G0048"
+    },
+    {
+      "variant": "canonical name",
+      "mention": "Tor",
+      "expected": "S0183",
+      "type": "Software",
+      "predicted": null
+    },
+    {
+      "variant": "canonical name",
+      "mention": "Orz",
+      "expected": "S0229",
+      "type": "Software",
+      "predicted": null
+    },
+    {
+      "variant": "canonical name",
+      "mention": "yty",
+      "expected": "S0248",
+      "type": "Software",
+      "predicted": null
+    },
+    {
+      "variant": "canonical name",
+      "mention": "Dok",
+      "expected": "S0281",
+      "type": "Software",
+      "predicted": null
+    },
+    {
+      "variant": "alias",
+      "mention": "LV",
+      "expected": "S0385",
+      "type": "Software",
+      "predicted": null
+    },
+    {
+      "variant": "alias (lower case)",
+      "mention": "lv",
+      "expected": "S0385",
+      "type": "Software",
+      "predicted": null
+    },
+    {
+      "variant": "canonical name",
+      "mention": "Machete",
+      "expected": "S0409",
+      "type": "Software",
+      "predicted": "G0095"
+    },
+    {
+      "variant": "canonical name",
+      "mention": "EVILNUM",
+      "expected": "S0568",
+      "type": "Software",
+      "predicted": "G0120"
+    },
+    {
+      "variant": "canonical name",
+      "mention": "AppleJeus",
+      "expected": "S0584",
+      "type": "Software",
+      "predicted": "G1049"
+    },
+    {
+      "variant": "canonical name",
+      "mention": "Zox",
+      "expected": "S0672",
+      "type": "Software",
+      "predicted": null
+    }
+  ]
+}

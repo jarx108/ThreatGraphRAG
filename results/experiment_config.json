@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-10-03T04:28:23.304331+00:00",
+  "python_version": "3.11.6",
+  "dataset": {
+    "source": "MITRE ATT&CK Enterprise STIX",
+    "pinned_version": "19.2",
+    "source_url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/enterprise-attack/enterprise-attack-19.2.json",
+    "n_gold_triples": 60,
+    "n_eval_queries": 30,
+    "eval_queries_by_category": {
+      "group_technique_mitigation": 14,
+      "group_software_technique": 8,
+      "group_software_technique_mitigation": 8
+    }
+  },
+  "llm": {
+    "provider": "gemini",
+    "generation_model": "gemini-3.1-flash-lite",
+    "extraction_model": "gemini-3.1-flash-lite",
+    "ragas_judge_model": "gemini-3.1-flash-lite",
+    "max_tokens": 2048,
+    "temperature": 0.0
+  },
+  "embedding": {
+    "provider": "sentence-transformers",
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "dimensions": 384
+  },
+  "chunking": {
+    "chunk_size_chars": 750,
+    "chunk_overlap_chars": 100,
+    "method": "character-based sliding window (not token-based)"
+  },
+  "retrieval": {
+    "top_k_chunks": 5,
+    "max_hops": 3,
+    "max_graph_facts": 15
+  }
+}

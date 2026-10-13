@@ -1,0 +1,80 @@
+# Rebuilds the pipeline from scratch on Linux and checks it against the
+# manifest committed from the development machine (macOS): pinned
+# dependencies -> STIX download (hash-verified) -> parsing -> chunking ->
+# embeddings -> Neo4j graph -> both systems' retrieval. No LLM key needed.
+name: reproducibility
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-24.04
+    services:
+      neo4j:
+        image: neo4j:2026.09.0-community
+        env:
+          NEO4J_AUTH: neo4j/ci-password-123
+        ports:
+          - 7687:7687
+        options: >-
+          --health-cmd "cypher-shell -u neo4j -p ci-password-123 'RETURN 1'"
+          --health-interval 5s --health-timeout 5s --health-retries 40
+    env:
+      NEO4J_URI: bolt://localhost:7687
+      NEO4J_USER: neo4j
+      NEO4J_PASSWORD: ci-password-123
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Pre-install CPU-only torch (same version as requirements.lock, without CUDA)
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install torch==$(grep -oP '^torch==\K.*' requirements.lock) \
+            --index-url https://download.pytorch.org/whl/cpu
+      - name: Setup from pinned requirements
+        run: PYTHON=python scripts/setup.sh --skip-ragas --skip-ollama
+      - name: Tests
+        run: make test
+      - name: Build the graph
+        run: make populate
+      - name: Verify against committed manifest
+        run: make verify
+
+  ragas-env:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: |
+            3.11
+            3.13
+      - name: Build both environments exactly as pinned
+        run: |
+          python3.13 -m venv .venv
+          .venv/bin/pip install torch==$(grep -oP '^torch==\K.*' requirements.lock) \
+            --index-url https://download.pytorch.org/whl/cpu
+          python3.11 -m venv .venv-ragas
+          .venv-ragas/bin/pip install torch==$(grep -oP '^torch==\K.*' requirements-ragas.txt) \
+            --index-url https://download.pytorch.org/whl/cpu
+          scripts/setup.sh --skip-ollama
+
+  frontend:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "18.17"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install pinned dependencies and type-check + build
+        working-directory: frontend
+        run: |
+          npm ci --no-audit --no-fund
+          npm run build
