@@ -1,0 +1,571 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{hyperref}
+
+\newcommand{\todoplaceholder}[1]{\textcolor{red}{[PLACEHOLDER -- #1 -- fill in only after real experiments complete; do not fabricate]}}
+
+\begin{document}
+
+\title{ThreatGraph: Evaluating Knowledge Graph-Augmented RAG for Multi-Hop Cyber Threat Intelligence Question Answering}
+
+\author{
+\IEEEauthorblockN{Amber Hasan}
+\IEEEauthorblockA{CS 6338 Knowledge Engineering}
+}
+
+\maketitle
+
+\begin{abstract}
+Cyber threat intelligence (CTI) analysts routinely need to answer questions
+that require chaining several facts together -- for example, identifying
+which threat groups use a given ATT\&CK technique, which malware those
+groups employ to carry it out, and which mitigations defend against it.
+Standard retrieval-augmented generation (RAG) systems retrieve semantically
+similar text passages but have no explicit mechanism for multi-hop
+relational reasoning. This paper presents ThreatGraph, a system that
+augments text-only RAG with a MITRE ATT\&CK knowledge graph stored in Neo4j,
+combining semantic chunk retrieval with bounded multi-hop graph traversal.
+We built a 30-question multi-hop benchmark and a 60-triple extraction
+benchmark, both derived programmatically from the official MITRE Enterprise
+ATT\&CK v19.2 STIX data rather than hand-written, and designed a paired
+evaluation comparing ThreatGraph against a text-only RAG baseline on the
+same corpus, embedding model, generation model, and benchmark questions.
+Across all 30 questions, ThreatGraph improved RAGAS Answer Relevancy from
+0.000 to 0.430 and Context Recall from 0.067 to 0.644 (both paired
+$p<10^{-5}$), with no significant change in Faithfulness and a
+directionally positive but non-significant gain in Context Precision, and
+no significant latency penalty despite retrieving 66.6\% more context
+characters on average ($p=5.1\times10^{-30}$).
+\end{abstract}
+
+\begin{IEEEkeywords}
+knowledge graphs, retrieval-augmented generation, cyber threat intelligence, MITRE ATT\&CK, question answering, GraphRAG
+\end{IEEEkeywords}
+
+\section{Introduction}
+Cyber threat intelligence question answering frequently requires multi-hop
+reasoning over structured relationships between threat actors, malware,
+techniques, and mitigations -- relationships that MITRE ATT\&CK already
+encodes explicitly as a graph. A question such as ``Which threat groups use
+Process Injection (T1055), what malware associated with those groups uses
+this technique, and which mitigations can help defend against it?'' requires
+traversing \emph{ThreatGroup} $\rightarrow$ \emph{Software}
+$\rightarrow$ \emph{Technique} $\leftarrow$ \emph{Mitigation} relationships,
+not merely retrieving the single most semantically similar passage.
+Standard RAG systems retrieve independently scored text chunks and have no
+native mechanism for assembling such a chain. This motivates the central
+research question: \emph{does adding MITRE ATT\&CK knowledge-graph
+retrieval to RAG improve multi-hop CTI question answering compared with a
+standard text-only RAG system, and if so, at what cost in latency and
+irrelevant context?}
+
+We do not assume the answer. GraphRAG approaches add retrieval complexity,
+additional context, and additional latency; whether the added structure
+translates into measurably better answers, worse answers (e.g. through
+irrelevant graph facts diluting faithfulness), or no detectable difference
+at this benchmark size is an empirical question this paper is designed to
+measure, not assume.
+
+\section{Related Work}
+Retrieval-augmented generation (RAG) \cite{lewis2020} combines a
+non-parametric retriever over an external corpus with a parametric
+generator, grounding generated text in retrieved evidence rather than
+relying solely on parameters learned at training time. Standard RAG
+retrieves independently-scored passages and has no built-in mechanism for
+combining facts that are individually retrievable but only answerable
+together through an explicit relational chain -- precisely the gap
+multi-hop CTI questions expose.
+
+Graph-augmented RAG approaches address this by retrieving structured
+relationships alongside or instead of free text. Microsoft Research's
+GraphRAG \cite{edge2024graphrag} builds an LLM-derived entity-relationship
+graph over a corpus, detects communities within it, and generates
+hierarchical community summaries used at query time for
+query-focused summarization -- a different mechanism (corpus-derived graph
+construction plus summarization) from this project's approach (retrieval
+over an existing authoritative knowledge graph, MITRE ATT\&CK, combined
+with bounded multi-hop traversal), but motivated by the same observation
+that pure vector retrieval under-serves questions requiring relational
+reasoning across multiple entities.
+
+MITRE ATT\&CK itself is maintained as a structured knowledge base (STIX
+2.1) of adversary tactics, techniques, software, groups, and mitigations,
+and is widely used as a reference ontology for cyber threat intelligence
+tooling; this project uses it directly as the knowledge graph rather than
+constructing one from unstructured text, reserving LLM-based extraction
+(Section~\ref{sec:dataset}) for ingesting CTI sources that are not already
+structured.
+
+RAGAS \cite{es2024ragas} is used here for reference-free
+(Faithfulness, Answer Relevancy) and reference-based (Context Precision,
+Context Recall) automated RAG evaluation, as described in
+Section~\ref{sec:results}.
+
+\todoplaceholder{This section covers RAG, GraphRAG, MITRE ATT\&CK's role as
+a structured CTI knowledge base, and RAGAS -- four load-bearing citations
+whose core facts (authors, venue, year, core claims) the author of this
+paper is confident are accurate. A stronger related-work section would add
+specific prior work on (a) LLM-based cyber threat intelligence entity/
+relationship extraction and (b) knowledge-graph question answering more
+broadly; those are deliberately left out rather than filled with citations
+this assistant could not verify against the original source, per the
+project's instruction never to fabricate references.}
+
+\section{System Architecture}
+ThreatGraph consists of five stages, shown in Figure~\ref{fig:architecture}
+(to be added): ingestion, knowledge extraction, entity resolution, graph
+population, and dual retrieval-augmented generation.
+
+\subsection{Ontology}
+Entities are typed as \texttt{ThreatGroup}, \texttt{Technique},
+\texttt{Software}, \texttt{Campaign}, \texttt{Mitigation},
+\texttt{Vulnerability}, and \texttt{Document}. Relationships are restricted
+to \texttt{USES}, \texttt{MITIGATES}, \texttt{ATTRIBUTED\_TO},
+\texttt{EXPLOITS}, and \texttt{MENTIONED\_IN}, with a fixed set of allowed
+(subject-type, predicate, object-type) triples enforced by a Pydantic schema
+(\texttt{schemas.py}) shared across the extraction prompt, the extraction
+validator, and the Neo4j schema, so the four representations cannot drift
+out of sync.
+
+\subsection{Ingestion and Knowledge Extraction}
+The system ingests the official MITRE Enterprise ATT\&CK STIX bundle
+(pinned to v19.2) directly for graph construction, since STIX already
+provides structured, high-confidence entities and relationships. A separate
+LLM-based extraction pipeline (prompt in
+\texttt{prompts/extraction\_prompt.txt}) is implemented for ingesting
+unstructured CTI text (e.g. CISA advisories) where no structured source
+exists; its output is validated for shape and ontology conformance before
+any entity resolution or graph write occurs, and evidence text is preserved
+for every extracted relationship.
+
+\subsection{Entity Resolution}
+Extracted entity mentions are resolved against the canonical ATT\&CK entity
+set in order of decreasing precision: (1) exact ATT\&CK identifier, (2)
+known alias, (3) normalized canonical name, (4) embedding cosine similarity
+above a configurable threshold as a last resort.
+
+\subsection{Knowledge Graph}
+Entities, relationships, text chunks, and provenance are stored in Neo4j
+with uniqueness constraints on canonical identifiers, lookup indexes on
+entity names, and a vector index over chunk embeddings. All writes are
+parameterized, batched \texttt{MERGE} operations, making graph population
+idempotent and safe to re-run.
+
+\subsection{Dual RAG Systems}
+System A (baseline) retrieves the top-$k$ semantically similar text chunks
+via the Neo4j vector index and generates an answer from that context alone.
+System B (ThreatGraph) performs the same vector retrieval, identifies seed
+entities from ATT\&CK IDs mentioned in the question and from the top
+retrieved chunks, performs bounded multi-hop graph traversal from those
+seeds (capped at 3 hops and 15 facts), and combines text and
+graph evidence into one context block before generation. Both systems share
+the same embedding model, generation model, and prompt template, differing
+only in the presence of graph retrieval.
+
+For a hub entity with many edges of one type (e.g. a common technique with
+dozens of \texttt{USES} edges from \texttt{Software} but only a few direct
+\texttt{ThreatGroup} or \texttt{Mitigation} edges), naively truncating to the
+first $k$ matched facts can crowd out rarer, often more directly relevant
+edge types. ThreatGraph's traversal instead pools candidate facts per (hop
+distance, entity type) bucket and round-robins across buckets, exhausting
+1-hop facts before falling back to 2-hop facts, so one high-volume
+relationship type cannot silently starve the context of ThreatGroup- or
+Mitigation-level evidence -- a real failure mode found and fixed during
+development (Section~\ref{sec:limitations}).
+
+\section{Dataset and Benchmark Construction}
+\label{sec:dataset}
+Both benchmarks are derived programmatically from the official MITRE
+Enterprise ATT\&CK v19.2 STIX bundle (\texttt{scripts/build\_benchmarks.py}),
+not hand-authored, so every record traces back to a concrete STIX
+relationship ID.
+
+\texttt{gold\_triples.json} contains 60 \texttt{(subject, predicate,
+object)} triples spanning \texttt{USES} and \texttt{MITIGATES}
+relationships, used for extraction evaluation.
+
+\texttt{eval\_queries.json} contains 30 multi-hop question-answer records
+across three reasoning-path categories, summarized in
+Table~\ref{tab:benchmark-categories}.
+
+\begin{table}[h]
+\centering
+\caption{Multi-hop benchmark categories}
+\label{tab:benchmark-categories}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Category & Hops & Count \\
+\midrule
+ThreatGroup$\to$Technique$\leftarrow$Mitigation & 2 & 14 \\
+ThreatGroup$\to$Software$\to$Technique & 2 & 8 \\
+ThreatGroup$\to$Software$\to$Technique$\leftarrow$Mitigation & 3 & 8 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+To prevent benchmark leakage, \texttt{expected\_answer} is withheld from
+both RAG systems at answer time and attached to result records only after
+generation, for scoring purposes.
+
+\section{Experimental Setup}
+Both systems share the following configuration, recorded automatically to
+\texttt{results/experiment\_config.json} on every run for reproducibility:
+
+\begin{itemize}
+\item \textbf{Corpus}: MITRE Enterprise ATT\&CK v19.2 STIX, 1{,}798 active
+  entities (176 ThreatGroup, 697 Technique, 825 Software, 56 Campaign, 44
+  Mitigation) and 18{,}613 relationships, chunked into 3{,}079 text chunks.
+\item \textbf{Embedding model}: \texttt{sentence-transformers/all-MiniLM-L6-v2},
+  384 dimensions, run locally (no API key required for retrieval/indexing).
+\item \textbf{Chunking}: 750-character chunks, 100-character overlap,
+  character-based (not token-based) sliding window.
+\item \textbf{Generation / extraction model}: \texttt{gemini-3.1-flash-lite}
+  (temperature 0, max output tokens 2048, internal "thinking" disabled --
+  see Section~\ref{sec:limitations}).
+\item \textbf{RAGAS judge model}: \texttt{gpt-4o-mini} (temperature 0),
+  separate from the generation/extraction model -- see
+  Section~\ref{sec:limitations} for why.
+\item \textbf{Retrieval budget}: top-5 text chunks for both systems; System B
+  additionally retrieves up to 15 bounded graph facts within 3 hops.
+\item \textbf{Benchmark}: 60 gold extraction triples, 30 multi-hop QA
+  questions (14 two-hop ThreatGroup-Technique-Mitigation, 8 two-hop
+  ThreatGroup-Software-Technique, 8 three-hop
+  ThreatGroup-Software-Technique-Mitigation), all derived programmatically
+  from the same STIX bundle (Section~\ref{sec:dataset}).
+\end{itemize}
+
+\section{Evaluation Methodology}
+\subsection{Triple Extraction Metrics}
+Precision, Recall, and F1 are computed by exact match on the canonical
+triple $(\text{subject\_attack\_id}, \text{predicate}, \text{object\_attack\_id})$
+after entity resolution. A true positive is a predicted triple present in
+the gold set; a false positive is a predicted triple absent from the gold
+set (including triples built from entities that could not be resolved to a
+canonical ATT\&CK identifier); a false negative is a gold triple with no
+matching predicted triple.
+$$\text{Precision} = \frac{TP}{TP+FP}, \quad \text{Recall} = \frac{TP}{TP+FN}, \quad F1 = \frac{2 \cdot P \cdot R}{P+R}$$
+
+\subsection{RAGAS Metrics}
+Faithfulness and Answer Relevancy are \emph{reference-free}: Faithfulness
+measures the fraction of claims in the generated answer that are entailed
+by the retrieved context; Answer Relevancy measures how directly the answer
+addresses the original question via back-generated question/original
+question embedding similarity, independent of the retrieved context or the
+gold answer. Context Precision and Context Recall are \emph{reference-based}:
+Context Precision measures whether relevant retrieved evidence is ranked
+near the top; Context Recall measures whether the retrieved context
+contains the information needed to reconstruct the reference answer. We use
+\texttt{ragas==0.2.15} (version pinning rationale in the project README) with
+\texttt{gpt-4o-mini} as the judge LLM and a local
+\texttt{sentence-transformers/all-MiniLM-L6-v2} embedding model for the
+Answer Relevancy metric specifically (no embedding API key required).
+
+\subsection{Human Evaluation}
+A 1--5 rubric (Factuality, Completeness, Coherence) is defined for manual
+rating of generated answers (\texttt{threatgraph/eval/human\_eval.py}).
+\todoplaceholder{Human ratings, once actually collected -- do not report
+scores here unless a human rater produced them.}
+
+\subsection{Performance Instrumentation}
+End-to-end, retrieval, and generation latency; input/output token counts;
+estimated cost; and the number of retrieved chunks/graph facts are recorded
+per question for both systems.
+
+\subsection{Statistical Comparison}
+Because both systems answer identical questions, all comparisons are
+\emph{paired}: per-question differences, a paired $t$-test, and the
+distribution-free Wilcoxon signed-rank test are reported together, with a
+95\% confidence interval on the mean paired difference. With $n \le 30$
+questions, a non-significant result is explicitly not interpreted as
+evidence of equivalence.
+
+\section{Results}
+\label{sec:results}
+All numbers below are real measurements from the 30-question benchmark and
+the 60-triple extraction benchmark (results/comparison.csv,
+results/ragas\_metrics.json, results/extraction\_metrics.json,
+results/statistical\_analysis.json), using \texttt{gemini-3.1-flash-lite}
+for extraction and answer generation (Section~\ref{sec:limitations}
+discusses why this model, not the originally-intended
+\texttt{gemini-3.8-flash}, was used) and \texttt{gpt-4o-mini} as the
+separate RAGAS judge model (switched from Gemini after RAGAS's per-record
+fan-out into several judge sub-calls each exhausted Gemini's free-tier
+daily quota before a full pass could complete; see
+Section~\ref{sec:limitations}).
+
+\subsection{Triple Extraction}
+\begin{table}[h]
+\centering
+\caption{Triple extraction performance (gemini-3.1-flash-lite, 60/60 gold-triple subjects attempted)}
+\label{tab:extraction}
+\begin{tabular}{@{}lr@{}}
+\toprule
+Metric & Value \\
+\midrule
+Precision (strict, vs. 60-triple sample) & 0.115 \\
+Precision (adjusted, vs. full STIX ground truth) & 0.692 \\
+Recall (vs. 60-triple sample) & 0.050 \\
+F1 (strict) & 0.070 \\
+True positives / predicted / gold & 3 / 26 / 60 \\
+False positives: hallucinated & 8 \\
+False positives: real fact outside sample & 15 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The large gap between strict and adjusted precision is explained in
+Section~\ref{sec:limitations}: most "false positives" under the strict
+60-triple-sample definition are real STIX relationships the sample simply
+did not include, not fabrications.
+
+\subsection{Answer Quality (RAGAS)}
+\begin{table}[h]
+\centering
+\caption{RAGAS scores, 30-question benchmark, 60 total judged answers (gpt-4o-mini judge; paired tests, n=30)}
+\label{tab:results}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Metric & System A & System B & Paired $p$ (t / Wilcoxon) \\
+\midrule
+Faithfulness & 0.958 & 0.887 & 0.162 / 0.183 \\
+Answer Relevancy & 0.000 & 0.430 & $3.4\times10^{-6}$ / $3.1\times10^{-5}$ \\
+Context Precision & 0.296 & 0.415 & 0.068 / 0.098 \\
+Context Recall & 0.067 & 0.644 & $1.1\times10^{-8}$ / $2.1\times10^{-5}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Answer Relevancy and Context Recall both improve very significantly for
+System B. Answer Relevancy rising from exactly 0.000 to 0.430 reflects a
+qualitative pattern visible in the raw transcripts
+(\texttt{results/raw\_experiment\_results.json}): System A very frequently
+produces a variant of "the provided context does not contain information
+linking this group to this technique," which RAGAS's answer-relevancy
+metric (built on embedding similarity between the original question and
+synthetic questions back-generated from the answer) scores as unrelated to
+the question asked, since a refusal-to-answer is not *about* the same
+specific entities as the question. Context Recall rising from 0.067 to
+0.644 (+866\% relative, paired $t(29)=7.88$, $p=1.1\times10^{-8}$) means
+System A's five text chunks very rarely happen to state the specific
+technique-mitigation (or technique-software) pairing a question asks about,
+while System B's added graph facts directly supply it. Context Precision is
+directionally higher for System B (+40.5\% relative) but does not clear the
+conventional $p<0.05$ threshold at $n=30$ (paired-$t$ $p=0.068$). Faithfulness
+is not significantly different between systems ($p=0.162$); System A's
+nominal edge is consistent with short refusal answers being trivially
+faithful to whatever little context they do cite, rather than System B's
+answers being less well-grounded in absolute terms.
+
+\subsection{Latency and Context Volume}
+\begin{table}[h]
+\centering
+\caption{Latency and context volume, 30-question benchmark (mean $\pm$ SD; paired tests, n=30)}
+\label{tab:latency}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Metric & System A (Baseline) & System B (ThreatGraph) \\
+\midrule
+Mean total latency (s) & 5.49 $\pm$ 13.42 & 3.04 $\pm$ 10.16 \\
+Mean context length (chars) & 1748.9 $\pm$ 564.4 & 2913.8 $\pm$ 598.9 \\
+Retrieved text chunks & 5.0 (fixed) & 5.0 (fixed) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Context length differs very significantly (paired $t(29)=51.3$, $p=5.1\times10^{-30}$;
+Wilcoxon $p=1.7\times10^{-6}$): System B's graph facts add 1{,}164.8 characters
+of context on average (+66.6\%), exactly as expected by construction -- this
+is the intended experimental manipulation, not a finding in itself. Latency
+is nominally lower for System B in this run (-44.6\% relative, mean
+difference $-2.45$s) but the paired test is far from significant (paired-$t$
+$p=0.238$; Wilcoxon $p=0.416$), and both systems show very high variance
+(SD exceeding the mean), dominated by a small number of multi-second outlier
+calls consistent with provider-side rate-limit backoff rather than a
+systematic latency difference between the two retrieval strategies; see
+Section~\ref{sec:limitations}. By reasoning depth, the 8 three-hop questions
+show a larger (but still non-significant, $n=8$) latency reduction for
+System B ($-75.3\%$) than the 22 two-hop questions ($-31.7\%$), the opposite
+direction of what one might expect if graph traversal were adding
+meaningful retrieval overhead.
+
+\section{Discussion}
+
+\textbf{Did graph retrieval improve multi-hop QA?} Yes, on the two metrics
+that measure whether the system actually answers the question with the
+right information: Answer Relevancy (0.000 $\to$ 0.430,
+$p=3.4\times10^{-6}$) and Context Recall (0.067 $\to$ 0.644,
+$p=1.1\times10^{-8}$). This is consistent with the research hypothesis --
+MITRE ATT\&CK relationships needed to answer these questions (e.g. which
+mitigations address a given technique) are structurally present in the
+graph but not reliably recoverable from the top-5 semantically similar text
+chunks alone, since a technique's mitigations are rarely co-located in the
+same passage as the technique's description.
+
+\textbf{Did the improvement differ between 2-hop and 3-hop questions?} Yes,
+and in an unexpected direction. For the 22 two-hop questions, System B's
+mean Answer Relevancy is 0.586 vs. System A's 0.000. For the 8 three-hop
+questions, System B's mean Answer Relevancy is also 0.000 -- identical to
+the baseline -- even though Context Recall still improves for three-hop
+questions (0.000 $\to$ 0.275). In other words, for three-hop questions the
+graph retrieval layer successfully supplies more of the needed facts into
+the context, but the generation step does not reliably turn that richer
+context into an answer RAGAS judges as relevant to the specific
+multi-entity question asked. This points to a synthesis bottleneck rather
+than a retrieval bottleneck for the hardest reasoning-depth category, and
+is plausibly specific to \texttt{gemini-3.1-flash-lite}'s capability at
+synthesizing several chained facts (group $\to$ software $\to$ technique
+$\to$ mitigation) into a coherent answer, not necessarily a property of
+graph-augmented retrieval in general.
+
+\textbf{Did graph retrieval introduce irrelevant context?} Context
+Precision is directionally higher for System B (0.296 $\to$ 0.415,
++40.5\%) but does not reach conventional significance at $n=30$
+($p=0.068$), so the data here does not support a strong claim either way.
+Qualitatively, the round-robin bucketing fix described in
+Section~\ref{sec:limitations} was built specifically to prevent one
+high-volume relationship type from drowning out rarer, more relevant graph
+facts; its effect on Context Precision specifically was not isolated as a
+separate ablation in this evaluation and would be a natural next
+experiment.
+
+\textbf{Did graph retrieval increase latency?} No measurable systematic
+increase: retrieval itself (vector search plus bounded graph traversal) is
+under 0.1s on average for both systems, and total latency -- dominated by
+LLM generation, which both systems share -- showed no significant paired
+difference (Table~\ref{tab:latency}, $p=0.238$). The additional ~1,165
+characters of graph-fact context did not translate into materially slower
+generation in this evaluation.
+
+\section{Limitations}
+\label{sec:limitations}
+This evaluation uses a 30-question benchmark, which limits statistical
+power for the paired significance tests reported in
+Section~\ref{sec:results}; non-significant results should
+not be read as equivalence. Chunking is character-based rather than
+token-based. The local embedding model
+(\texttt{sentence-transformers/all-MiniLM-L6-v2}, 384 dimensions) is smaller
+than commonly used hosted embedding models, which may affect retrieval
+quality for both systems equally. Graph retrieval currently covers two
+reasoning-path shapes derived from \texttt{USES}/\texttt{MITIGATES}
+relationships only; \texttt{EXPLOITS} and \texttt{ATTRIBUTED\_TO} paths are
+supported by the ontology and bounded-traversal code but are not represented
+in the current benchmark.
+
+\textbf{Model/provider constraints.} The free tier of the LLM provider used
+for this evaluation (Google Gemini) imposes per-model request quotas. An
+initial run with \texttt{gemini-3.8-flash} was blocked by a 20-requests/day
+quota after exploratory testing alone consumed most of it; that model also
+spent most of its output-token budget on internal reasoning ("thinking")
+tokens unless that behavior was explicitly disabled, which otherwise
+truncated structured-JSON extraction output mid-string. The reported generation/extraction
+experiments instead use \texttt{gemini-3.1-flash-lite}, which has a
+separate, more usable per-minute quota (15 requests/minute) but is a
+smaller, lower-capacity model; both the latency and answer-quality results
+in this paper should be read as specific to this model, not as a general
+claim about GraphRAG vs. baseline latency or quality under a larger
+generation model. RAGAS judging hit a further, distinct quota wall even on
+\texttt{gemini-3.1-flash-lite}: a single RAGAS metric does not correspond
+to one LLM call per record -- Faithfulness alone issues one call to extract
+claims plus one call per claim to verify it, and Context Precision/Recall
+issue calls per retrieved context item -- so evaluating 60 records across 4
+metrics fanned out into several hundred real API calls and exhausted
+Gemini's 500-requests/day free-tier limit for that model before a full pass
+completed, independent of and in addition to the per-minute limit above.
+The RAGAS judge was switched to \texttt{gpt-4o-mini} (a separate provider
+and quota, paid but inexpensive -- an estimated well under \$1 for this
+evaluation's full 60-record, 4-metric pass, though this project did not
+verify the exact billed amount against OpenAI's dashboard) to obtain
+complete, reliable judged scores;
+the practical lesson is that RAGAS's per-metric call-fan-out should be
+budgeted for explicitly against a provider's actual daily/per-minute
+limits, not approximated as one call per (record, metric) pair.
+
+\textbf{Graph-traversal correctness bugs found during development.}
+Development surfaced and fixed two bugs in the bounded graph-traversal
+fallback used when the Neo4j instance lacks the APOC plugin: an undirected
+neighbor query that reported relationship direction based on which side
+matched the seed node rather than the edge's actual stored direction
+(silently inverting facts like ``Software USES Technique'' into ``Technique
+USES Software''), and a result-key mismatch that caused almost all retrieved
+facts to collapse together during deduplication. Both were caught by
+manually inspecting retrieved graph facts against known ATT\&CK relationships
+during development, not by an automated check.
+
+\textbf{Extraction evaluation findings.} Running real LLM extraction against
+60 gold triples (Table~\ref{tab:extraction}) surfaced three specific,
+addressable issues rather than a single aggregate quality score. First, MITRE
+ATT\&CK's STIX descriptions embed inline bibliographic citation markers (for
+example ``(Citation: Kaspersky Winnti April 2013)''); the initial extraction
+prompt had no instruction to ignore these, so the model frequently extracted
+them as spurious \texttt{Document} entities, driving a high rate of
+unresolvable entities. Adding an explicit rule to ignore citation markers,
+and an explicit table of every allowed (subject-type, predicate,
+object-type) shape rather than a bare predicate list, reduced ontology-shape
+rejections from 46 to 2 out of 71 relationships attempted on the same
+20-entity re-test. Second, the model sometimes inverted the intended
+direction of \texttt{ATTRIBUTED\_TO} (extracting \texttt{ThreatGroup
+ATTRIBUTED\_TO Campaign} where this project's schema defines \texttt{Campaign
+ATTRIBUTED\_TO ThreatGroup}) -- both directions are a defensible modeling
+choice, but the mismatch between the model's assumption and this schema's
+convention is itself a finding worth noting for anyone reusing this
+ontology. Third, and most significant for interpreting Table~\ref{tab:extraction}:
+because \texttt{gold\_triples.json} is a 60-triple \emph{sample} of MITRE
+ATT\&CK's full relationship set rather than an exhaustive list, a meaningful
+fraction of "false positives" under the strict sample-only definition are
+real, verifiable STIX relationships that simply were not drawn into the
+sample -- in the full run, 15 of 23 false positives (65\%) were verified
+against the complete parsed STIX relationship set and are factually correct;
+only 8 were genuine fabrications. Crediting the 15 sample-external-but-real
+triples raises precision from 0.115 to an adjusted 0.692
+(\texttt{threatgraph.eval.extraction\_metrics.classify\_false\_positives}).
+Recall (0.05) is not similarly adjustable, since \texttt{gold\_triples.json}
+is the intended recall target by construction; the low recall reflects that
+a single description text often does not happen to state the one specific
+relationship a diversity-balanced sampling procedure selected as that
+entity's gold triple, which is a property of this evaluation design, not
+necessarily of extraction quality.
+
+\section{Conclusion}
+On this 30-question benchmark, adding MITRE ATT\&CK knowledge-graph
+retrieval to RAG produced a statistically significant improvement in
+whether the generated answer actually addresses the specific multi-hop
+question asked (Answer Relevancy, $p=3.4\times10^{-6}$) and in whether the
+retrieved evidence contains what is needed to support the reference answer
+(Context Recall, $p=1.1\times10^{-8}$), with no significant cost to
+Faithfulness or latency, and a non-significant directional improvement in
+Context Precision. This improvement was concentrated in two-hop questions;
+for the harder three-hop category, ThreatGraph retrieved more of the
+necessary evidence (Context Recall still improved) but this did not
+translate into a measurable Answer Relevancy gain, suggesting the
+bottleneck for the hardest questions in this evaluation was answer
+synthesis rather than retrieval. These results support the research
+hypothesis for the metrics and question types where it was tested, while
+leaving open how much of the effect is attributable to the specific
+(small, free-tier) generation model used rather than graph-augmented
+retrieval as a general technique. The extraction and graph-construction
+pipeline is independently useful and genuinely validated: real MITRE
+ATT\&CK STIX data populates a working Neo4j knowledge graph of 1,798
+entities and 18,613 relationships, and the development process itself
+surfaced and fixed multiple concrete correctness bugs (Section~\ref{sec:limitations})
+in ways that should generalize to other GraphRAG implementations over
+similar bounded-traversal patterns.
+
+\section*{Acknowledgment}
+This project makes use of MITRE ATT\&CK\textregistered{}.
+
+\begin{thebibliography}{00}
+\bibitem{lewis2020} P. Lewis et al., ``Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks,'' \emph{Advances in Neural Information Processing Systems}, vol. 33, 2020.
+\bibitem{es2024ragas} S. Es, J. James, L. Espinosa-Anke, and S. Schockaert, ``RAGAS: Automated Evaluation of Retrieval Augmented Generation,'' \emph{Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics: System Demonstrations}, 2024.
+\bibitem{edge2024graphrag} D. Edge, H. Trinh, N. Cheng, J. Bradley, A. Chao, A. Mody, S. Truitt, and J. Larson, ``From Local to Global: A Graph RAG Approach to Query-Focused Summarization,'' \emph{arXiv preprint arXiv:2404.16130}, 2024.
+\bibitem{mitreattack} MITRE, ``MITRE ATT\&CK,'' \url{https://attack.mitre.org/}, accessed 2026.
+\todoplaceholder{Add remaining references only after verifying each citation against its real source; do not leave fabricated entries here.}
+\end{thebibliography}
+
+\end{document}
